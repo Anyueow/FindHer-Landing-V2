@@ -17,40 +17,43 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import SectionThree from "./components/SectionThree/SectionThree";
 import Testimonial from "./components/Testimonial/Testimonial";
-
+function MainContent() {
+  return (
+      <>
+        <Hero />
+        <SectionOne />
+        <SectionTwo />
+        <SectionThree />
+        <Testimonial />
+      </>
+  );
+}
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-
-          <Route path="/" element={<Hero />} />
-
-        </Routes>
-        <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <Testimonial />
-
-        <Footer />
-
-      </div>
-    </Router>
+      <Router>
+        <Preloader load={load} />
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
   );
 }
+
 
 export default App;

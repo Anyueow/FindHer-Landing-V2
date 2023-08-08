@@ -1,54 +1,57 @@
 import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Container } from "react-bootstrap";
 
 function EmailFormPopup() {
-    const [showModal, setShowModal] = useState(false);
+    const [showContainer, setShowContainer] = useState(false);
     const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
 
-    const handleClose = () => setShowModal(false);
-    const handleShow = () => setShowModal(true);
-
-    const handleChange = (event) => {
-        setEmail(event.target.value);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form submitted with:", { email, phone, password });
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Email is ${email}`);
-        // Add any further logic for handling the email submission here
-        handleClose();
-    };
+    const handleClose = () => setShowContainer(false);
+    const handleShow = () => setShowContainer(true);
 
     return (
         <div>
             <button className="sign-up-btn" onClick={handleShow}>
-                Sign up today!</button>
+                Sign up today!
+            </button>
 
-
-            <Modal show={showModal} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Enter Your Email</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+            {showContainer && (
+                <Container>
+                    <Form onSubmit={handleSubmit} className="form-wrapper">
+                        <Form.Group>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control
                                 type="email"
-                                placeholder="Enter email"
                                 value={email}
-                                onChange={handleChange}
+                                onChange={e => setEmail(e.target.value)}
                             />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
+                        <Form.Group>
+                            <Form.Label>Phone Number</Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Button variant="dark" type="submit">Take me to leave a review</Button>
                     </Form>
-                </Modal.Body>
-            </Modal>
+                </Container>
+            )}
         </div>
     );
 }
