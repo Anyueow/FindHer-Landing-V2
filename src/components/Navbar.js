@@ -36,6 +36,9 @@ function NavBar() {
                         <Nav.Link href="#about">About</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
+                        <Nav.Link href="#about">Businesses</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
                         <Nav.Link href="#pricing">Contact Us</Nav.Link>
                     </Nav.Item>
                 </Nav>

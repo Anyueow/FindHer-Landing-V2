@@ -42,7 +42,7 @@ function TestimonialSection() {
                 <Container className="home-content-testi">
 
                     <div className="margin2">
-                    <h1 className="main-name"><strong>What
+                    <h1 className="main-name3"><strong>What
                         they have to say about Find<span className="text-wrapper-2">
                             Her</span>...</strong></h1> </div>
                     <Container className="testimonial">

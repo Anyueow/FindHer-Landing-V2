@@ -18,8 +18,7 @@ function SectionThree() {
                     <div className="space">
                     <h1 className="main-name-sect">
                         <strong>
-                            On Find
-                            <span className="text-wrapper">Her </span>
+                            On FindHer
                             you can get:
                         </strong></h1>
 
