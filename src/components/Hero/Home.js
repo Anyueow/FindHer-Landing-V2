@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import {Container, Row, Col, Form, Button} from "react-bootstrap";
+import {Container, Row, Col, Button} from "react-bootstrap";
 import ImgOne from "./Images/Group 125.png";
 import ImgThree from "./Images/Untitled design-13 1.png";
 import ImgTwo from "./Images/reviews 3d 1.png";
@@ -53,10 +53,10 @@ function Home() {
                         </Col>
 
                         <Col md={4}>
-                            <img src={base} className="base" />
-                            <img src={ImgOne} className="hoverOne" />
-                            <img src={ImgTwo} className="hoverTwo" />
-                            <img src={ImgThree} className="hoverThree" />
+                            <img src={base} className="base" alt="Findher Demo"/>
+                            <img src={ImgOne} className="hoverOne" alt="Findher Demo" />
+                            <img src={ImgTwo} className="hoverTwo" alt="Findher Demo"/>
+                            <img src={ImgThree} className="hoverThree" alt="Findher Demo" />
                         </Col>
                     </Row>
                 </Container>

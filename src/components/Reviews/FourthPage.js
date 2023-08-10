@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col, InputGroup, FormControl } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, InputGroup } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import "./reviewStyles.css";
 import {useNavigate} from "react-router-dom";

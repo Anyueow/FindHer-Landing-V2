@@ -1,26 +1,15 @@
-import React, { useState } from "react";
-import {Row, Col, Container, Button} from 'react-bootstrap';
-import { FaFacebookF, FaEnvelope, FaWhatsapp, FaInstagram, FaLinkedinIn, FaLink } from 'react-icons/fa';
-
+import React from "react";
+import {Button, Container, Row} from 'react-bootstrap';
 
 import "./reviewStyles.css";
 import {useNavigate} from "react-router-dom";
 
 
-const isSafariOrMac = () => {
-    const ua = window.navigator.userAgent;
-    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
-    return isSafari;
-}
 
 
 export const ThirdPage = () => {
 
     const navigate = useNavigate();
-    const classType = isSafariOrMac()
-                           ? "review-box2"
-                           : "review-box3";
-
 
 
     return (

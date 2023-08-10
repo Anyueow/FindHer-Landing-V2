@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Link, useNavigate} from 'react-router-dom';
 
 
-import { Nav, Button, Container, Form, Row, Col } from "react-bootstrap";
+import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import "./reviewStyles.css";
 import { AiOutlineCalendar } from 'react-icons/ai';
 import NavbarContext from '../NavbarContext';
@@ -21,9 +21,6 @@ export const SecondPage = () => {
     // within your component
     const navigate = useNavigate();
 
-    const underline = {
-        textDecoration: 'underline'
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevents the form from refreshing the page on submit

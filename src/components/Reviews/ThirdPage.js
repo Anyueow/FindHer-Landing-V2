@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Row, Col, Container } from 'react-bootstrap';
 import { FaFacebookF, FaEnvelope, FaWhatsapp, FaInstagram, FaLinkedinIn, FaLink } from 'react-icons/fa';
 
 
 import "./reviewStyles.css";
-import {useNavigate} from "react-router-dom";
 
 
 export const ThirdPage = () => {
-    // within your component
-    const navigate = useNavigate();
 
     const handleShare = (platform) => {
         let url = window.location.origin + '/reviews'; // Construct the URL to share

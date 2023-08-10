@@ -1,23 +1,12 @@
-import React, { useState } from 'react';
-import {
-    Form,
-    Button,
-    Container,
-    Row,
-    Col,
-    InputGroup,
-    FormControl,
-    FormText
-} from 'react-bootstrap';
-import { FaStar } from 'react-icons/fa';
+import React from 'react';
+import {Button, Col, Container, Form, Row,} from 'react-bootstrap';
 import "./reviewStyles.css";
 import {useNavigate} from "react-router-dom";
 import NavbarContext from "../NavbarContext";
 
 const isSafariOrMac = () => {
     const ua = window.navigator.userAgent;
-    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
-    return isSafari;
+    return /^((?!chrome|android).)*safari/i.test(ua);
 }
 
 
@@ -32,10 +21,6 @@ const FifthPage = (props) => {
     const containerStyle = isSafariOrMac()
                            ? {minHeight: "100vh", paddingTop: navbarHeight}
                            : {minHeight: "130vh", paddingTop: navbarHeight};
-
-    const boxstyle = isSafariOrMac()
-                           ? {minWidth: "80vw"}
-                           : {minWidth: "80vw"};
 
 
 
