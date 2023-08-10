@@ -15,9 +15,41 @@
   <meta itemprop="name" content="FindHer">
   <meta itemprop="description" content="Redefining job search for women in India">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Tempus Dominus CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" />
+
+</head>
+
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+
+<!-- Load necessary scripts at the bottom for better performance -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<!-- Tempus Dominus JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Initialize the date-time picker -->
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepickerStart').datetimepicker({
+                                               format: 'L'  // This will display date in the format MM/DD/YYYY
+                                             });
+    $('#datetimepickerEnd').datetimepicker({
+                                             format: 'L'  // This will display date in the format MM/DD/YYYY
+                                           });
+  });
+</script>
+
 </body>
 
 </html>

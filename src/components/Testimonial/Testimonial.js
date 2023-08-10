@@ -4,17 +4,27 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import {Col, Container, Row} from "react-bootstrap";
 import image from "./Illustration - composition 2.png";
 
+
 const testimonials = [
     {
-        name: "John Doe",
-        company: "Company A",
-        message: "Testimonial 1 message goes here...",
+        name: "Sneha M.",
+        company: "Anonymous",
+        message: "'Findher has been a game-changer in my job search. It gave me insights I didn't "
+                 + "even know I needed and connected me with a job that's a perfect fit. Highly recommend!'",
         image: image,
     },
     {
-        name: "Jane Smith",
-        company: "Company B",
-        message: "Testimonial 2 message goes here...",
+        name: "Radhika S.",
+        company: "Anonymous",
+        message: "'As a working mom, finding the right job seemed overwhelming. But Findher's "
+                 + "personalized matches and support made the process seamless. I'm so grateful!'",
+        image: image,
+    },
+    {
+        name: "Pooja K.",
+        company: "Anonymous",
+        message: "'I was searching for a platform that truly understood the challenges women like me "
+                 + "face in their careers. Their focus on my specific goals made all the difference'",
         image: image,
     },
     // Add more testimonials as needed
@@ -42,9 +52,8 @@ function TestimonialSection() {
                 <Container className="home-content-testi">
 
                     <div className="margin2">
-                    <h1 className="main-name3"><strong>What
-                        they have to say about Find<span className="text-wrapper-2">
-                            Her</span>...</strong></h1> </div>
+                    <h1 className="main-name3">Hear what these <span className="pink">women </span> have to say…
+               </h1> </div>
                     <Container className="testimonial">
                     <Row className="space space align-items-center">
                         <Col md={1}>

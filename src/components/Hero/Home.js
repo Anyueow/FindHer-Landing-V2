@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-import { Container, Row, Col, Form } from "react-bootstrap";
+import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import ImgOne from "./Images/Group 125.png";
 import ImgThree from "./Images/Untitled design-13 1.png";
 import ImgTwo from "./Images/reviews 3d 1.png";
 import base from "./Images/base.png";
-import EmailFormPopup from "./emailformpopup"; // Import the EmailFormPopup component
 
 function Home() {
+
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
 
     const handleChange = (event) => {
@@ -42,8 +45,10 @@ function Home() {
                                 women who have been there.
                             </h3>
 
-                            {/* Show the email form popup when the button is clicked */}
-                            <EmailFormPopup />
+                            <Button className="button-sub"
+                                    onClick={() => navigate('/reviews_login')}>
+                                Sign up today!
+                            </Button>
 
                         </Col>
 

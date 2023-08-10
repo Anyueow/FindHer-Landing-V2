@@ -17,7 +17,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import SectionThree from "./components/SectionThree/SectionThree";
 import Testimonial from "./components/Testimonial/Testimonial";
+import FirstPage from "./components/Reviews/FirstPage";
+import SecondPage from "./components/Reviews/SecondPage";
+import ThirdPage from "./components/Reviews/ThirdPage";
+import FourthPage from "./components/Reviews/FourthPage";
+import FifthPage from "./components/Reviews/FifthPage";
+import SixthPage from "./components/Reviews/SixthPage";
+import { NavbarProvider } from './components/NavbarContext';
+
 function MainContent() {
+
+
   return (
       <>
         <Hero />
@@ -30,6 +40,7 @@ function MainContent() {
 }
 
 function App() {
+
   const [load, updateLoad] = useState(true);
 
   useEffect(() => {
@@ -41,6 +52,8 @@ function App() {
   }, []);
 
   return (
+      <NavbarProvider value="5%">
+
       <Router>
         <Preloader load={load} />
         <div className="App" id={load ? "no-scroll" : "scroll"}>
@@ -48,10 +61,20 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<MainContent />} />
+              <Route path="/reviews_login" element={<FirstPage />} />
+              <Route path="/reviews_one" element={<SecondPage />}/>
+              <Route path="/reviews_two" element={<ThirdPage />}/>
+              <Route path="/reviews_three" element={<FourthPage />}/>
+              <Route path="/reviews_four" element={<FifthPage />}/>
+              <Route path="/reviews_five" element={<SixthPage />}/>
+
+
+
           </Routes>
           <Footer />
         </div>
       </Router>
+      </NavbarProvider>
   );
 }
 

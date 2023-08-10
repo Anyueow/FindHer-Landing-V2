@@ -13,7 +13,8 @@ function sectTwo() {
                     <Row className="imgs-base2">
                         <Col md={4} className="text-left"> {/* Align text to the left */}
                             <div className="margin"><h1 className="main-name">
-                                <strong>That's why we're building FindHer
+                                <strong>That's why we're building <span style={{textDecoration:"underline",
+                                    textDecorationColor:"#ee2c5b"} }> FindHer </span>
                                 </strong>
                             </h1> </div>
                             <h3 className="Sub">
