@@ -126,8 +126,8 @@
     }
 
     .base-image {
-        width: 95%;
-        margin-top: 8%;
-        overflow: hidden;
+        width: 89%;
+
+        overflow: clip;
     }
 }

@@ -33,8 +33,7 @@ function MainContent() {
       <>
         <Hero />
         <SectionOne />
-        <SectionTwo />
-        <SectionThree />
+
         <Testimonial />
       </>
   );

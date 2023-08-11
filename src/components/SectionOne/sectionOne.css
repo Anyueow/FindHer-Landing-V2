@@ -1,0 +1,81 @@
+.outer-container {
+    width: 100vw;
+    height: 115vh;
+    background-color: rgba(223, 224, 119, 0.29);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.73);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.73); /* This will add a black inner shadow */
+
+    background-image: url("./desktop bg.png"); /* Default desktop background */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+
+}
+
+.inner-container {
+    text-align: left;
+    width: 80%;
+    margin-top: 10%;
+    /* If you want to set a max-width for larger screens */
+    /* max-width: 1200px; */
+}
+
+.main-name-sect {
+    color: rgb(0, 0, 0);
+    font-family: "League Spartan-SemiBold", "Montserrat-SemiBold";
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 4%;
+}
+
+.text-wrapper {
+    font-weight: 700;
+    color: rgba(226, 11, 60, 0.83);
+}
+
+.main-sub {
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat-SemiBold";
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: left;
+    width:90%
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .inner-container {
+        width: 95%; /* Increasing width on mobile for a smaller padding effect */
+    }
+
+    .main-name-sect {
+        font-size: 2rem; /* Decreasing font size for mobile */
+        margin-bottom: 5%; /* Adjusting margin */
+        margin-top: 0;
+    }
+
+    .main-sub {
+        font-size: 1rem; /* Decreasing font size for mobile */
+    }
+
+    /* Mobile styles */
+
+        .outer-container {
+           background-image: url("./mobile bg.png");
+            background-size: cover; /* Ensures the image covers the entire container */
+
+        }
+
+    /* Additional mobile adjustments can be added here */
+}
