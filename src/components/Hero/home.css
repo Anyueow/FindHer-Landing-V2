@@ -75,10 +75,7 @@
     background-color: #DFE077;
 }
 
-.images-content {
-    flex: 1;
-    position: relative;
-}
+
 
 .base-image {
     width: 90%;
@@ -88,12 +85,23 @@
     overflow: hidden;
 }
 
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        text-align: center;
+    .hero-text {
+
+        padding-top: 25%;
+        align-items: flex-end;
+
+
     }
 
     .main-name {
@@ -105,11 +113,21 @@
     }
 
     .signup-btn {
-        padding: 8px 16px;
+        padding: 12px 16px;
+        font-size: 1rem;
     }
 
-    .images-content {
-        order: -1;  /* Show images on top on mobile */
-        margin-bottom: 20px;
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .base-image {
+        width: 95%;
+        margin-top: 8%;
+        overflow: hidden;
     }
 }
