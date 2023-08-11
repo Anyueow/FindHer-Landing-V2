@@ -28,6 +28,8 @@ import { NavbarProvider } from './components/NavbarContext';
 function MainContent() {
 
 
+
+
   return (
       <>
         <Hero />
@@ -40,6 +42,15 @@ function MainContent() {
 }
 
 function App() {
+
+    const [records, setRecords] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/records')
+            .then(response => response.json())
+            .then(data => setRecords(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
 
   const [load, updateLoad] = useState(true);
 

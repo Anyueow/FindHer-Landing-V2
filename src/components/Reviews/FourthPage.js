@@ -5,7 +5,7 @@ import "./reviewStyles.css";
 import {useNavigate} from "react-router-dom";
 import NavbarContext from "../NavbarContext";
 
-const FourthPage = (props) => {
+const FourthPage = () => {
     // within your component
     const navigate = useNavigate();
     const navbarHeight = React.useContext(NavbarContext);

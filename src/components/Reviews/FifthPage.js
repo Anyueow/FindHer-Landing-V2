@@ -11,7 +11,7 @@ const isSafariOrMac = () => {
 
 
 
-const FifthPage = (props) => {
+const FifthPage = () => {
     // within your component
     const navigate = useNavigate();
     const navbarHeight = React.useContext(NavbarContext);

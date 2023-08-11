@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 function NavBar() {
 
 
-
-
     const [navColor, updateNavbar] = useState(false);
 
     function scrollHandler() {
