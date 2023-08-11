@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
@@ -9,18 +10,43 @@ import NavbarContext from '../NavbarContext';
 
 export const FirstPage = () => {
     const navbarHeight = React.useContext(NavbarContext);
-
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted with:", { email, phone, password });
-    };
-
-    // within your component
+    const [isFormValid, setIsFormValid] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Check if all required fields have values
+        setIsFormValid(email !== "" && phone !== "" && password !== "");
+    }, [email, phone, password]);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!isFormValid) {
+            return; // Don't proceed if the form is not valid
+        }
+
+        console.log("Form submitted with:", {email, phone, password});
+
+        try {
+            const response = await axios.post("http://localhost:5001/api/users", {
+                email,
+                phone,
+                password
+            });
+
+            if (response.status === 200) {
+                console.log("User added successfully:", response.data);
+                // Navigate or perform other actions after successful addition
+            } else {
+                console.error("Error adding user:", response);
+            }
+        } catch (error) {
+            console.error("An error occurred while adding the user:", error);
+        }
+    };
 
     const handleClick = () => {
         navigate("/");
@@ -68,17 +94,33 @@ export const FirstPage = () => {
                 <Form onSubmit={handleSubmit} className="form-wrapper">
                 <Form.Group className="form-grp">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <Form.Control type="email"
+                                  value={email}
+                                  onChange={e => setEmail(e.target.value)}
+                                  required/>
+                    {!email && <p className="error-message">Email is required</p>}
+
                 </Form.Group>
                 <Form.Group className="form-grp">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="text" value={phone} onChange={e => setPhone(e.target.value)} />
+                    <Form.Control type="text" value={phone} onChange={e => setPhone(e.target.value)}
+                                  required/>
+                    {!phone && <p className="error-message">Phone Number is required</p>}
+
                 </Form.Group>
                 <Form.Group className="form-grp">
                     <Form.Label>Create Password</Form.Label>
-                    <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <Form.Control type="password" value={password}
+                                  onChange={e => setPassword(e.target.value)}
+                                  required/>
+                    {!password && <p className="error-message">Password is required</p>}
+
                 </Form.Group>
-                <Button className="button-sub" onClick={() => navigate('/reviews_one')}>
+                <Button
+                    className="button-sub"
+                    onClick={() => navigate('/reviews_one')}
+                    disabled={!isFormValid}
+                >
                     Leave a review!</Button>
             </Form>
                 </Row>
