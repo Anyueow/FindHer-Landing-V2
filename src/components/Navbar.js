@@ -36,7 +36,9 @@ function NavBar() {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/reviews_login">Submit a Review!</Link>
+                        <Link to="/reviews_login">
+                            <strong style={{color:"#E20B3CD4"}}>
+                                Submit a Review </strong></Link>
                     </li>
                     <li>
                         <Link to="/reviews_one">For Businesses</Link>
