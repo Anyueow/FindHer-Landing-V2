@@ -290,39 +290,44 @@ body {
   padding-top: 10px  ;
   padding-bottom: 8px   ;
   padding: 5%   ;
+  text-align: left  ;
+  justify-content: left;
 }
 .footer-copywright {
   text-align: left  ;
   text-decoration-color: #0c0513;
-  font-size: 1.5rem;
+  font-size: 0.2rem;
 }
 .Footerhed{
   margin-top: 3%;
   margin-bottom: 3%;
   text-align: left  ;
   text-decoration-color: #0c0513;
-  font-size: 2.5rem;
+  font-size: 1rem;
   max-width: 80%;
 }
 .footer-body {
-  z-index: 1;
-  text-align: center  ;
+
+  text-align: left  ;
 }
 
 @media (max-width: 767px) {
   .footer-copywright {
-    text-align: center  ;
+    font-size: 0.2rem;
+    text-align: left  ;
   }
 
   .footer-body {
-    text-align: center  ;
+    text-align: left  ;
   }
 }
 
 .footer-icons {
 
+  font-size: 2rem;
   padding: 0  ;
-  list-style: none; /* Remove bullet points */
+  list-style: none;
+  justify-items: baseline/* Remove bullet points */
 }
 
 

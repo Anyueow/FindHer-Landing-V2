@@ -25,7 +25,7 @@ function SectionThree() {
             <Container className="container-md">
                 <Row className="btn-section">
                     {images.map((img, index) => (
-                        <Col key={index} xs={12} md={4} className="tech-icons">
+                        <Col key={index} xs={12} md={3} className="tech-icons">
                             <h2 className="card-head">{cardTitles[index]}</h2>
                             <div className="image-container">
                                 <img src={img} className="img-card" alt={cardTitles[index]} />
@@ -37,7 +37,7 @@ function SectionThree() {
 
                 <Row className="btn-section1">
                     {cardTitles.map((title, index) => (
-                        <Col key={index} xs={12} md={4}>
+                        <Col key={index} xs={12} md={3}>
                             <button className="card-btn" onClick={() => handleClick(index)}>
                                 <span className="card-btn-head">{title}</span>
                             </button>

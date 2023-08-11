@@ -1,147 +1,40 @@
-
-/* --------- */
-/* About */
-/* --------- */
-@media (max-width: 767px) {
-    .footer-copywright {
-        text-align: center !important;
-    }
-    .imgs-base {
-        flex-direction: column;
-
-    }
-    .footer-body {
-        text-align: center !important;
-    }
-    .section-description{
-        font-family: "Montserrat-SemiBold", Helvetica;
-        font-size:16px;
-        line-height:24px;
-        display:block;
-        text-align:left;
-        /* margin:0; */
-    }
-    .card-btn-head{
-        font-family: 'DM Sans', sans-serif;
-        text-align:center;
-        line-height:35px;
-        font-size:24px;
-        color:#FFFFFF;
-    }
-    .btn-section{
-        display:none !important;
-    }
-    .btn-section1{
-        display:block !important;
-    }
-    .card-btn{
-        background:#EA394A;
-        /* padding:16px 48px; */
-        width: 300px;
-        margin: 10px 0px;
-        border:none;
-        outline:none;
-        border-radius:20px;
-    }
+.grid-section {
+    padding: 20px 0;
+    background-color: #f8f8f8; /* This is just a sample color. Adjust as needed. */
 }
 
-.btn-section{
-    display:block !important;
-}
-.btn-section1{
-    display: none !important;;
-}
-.display-none{
-    display: none !important;;
-}
-.card-btn{
-    background:#EA394A;
-    padding:16px 48px;
-    border:none;
-    outline:none;
-    border-radius:20px;
-}
-.about-section {
-    position: relative ;
-    padding-top: 150px ;
-    padding-bottom: 30px ;
-    color: white;
-}
-
-.card-head {
-
-    font-size: 30px;
-    line-height:42px;
-    font-family: 'DM Sans', sans-serif;
-    margin-bottom: 8%;
-    margin-top: 8%;
-    font-weight: 700;
+.container-md {
+    width: 100vw;
+    height: 115vh;
+    background-color: rgba(223, 224, 119, 0.29);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.73);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.73); /* This will add a black inner shadow */
 
 }
 
-.inCustomed{
-    position: absolute;
-    right: 0px;
-    max-width: 58%;
-    top: 45%;
-    transform: translateY(-50%);
-    /* overflow: hidden; */
-}
-.cardSub {
-    font-size: 20px;
-    padding: 20px;
-    font-weight: 500;
-    line-height:26px;
-    margin-top: auto;
-    font-family: 'DM Sans', sans-serif;
-    text-align: left;
-}
-
-.space {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    padding-top: 5%;}
-.cardSub .span {
-    font-weight: bold}
-
-.home-content-about {
-    margin-top: 3.5%;
-    padding-bottom: 6.5%;
-    text-align: left;
-    justify-content: left;/* Align text to the left */
-    min-width: 80%;
-
-}
 .tech-icons {
+    width: fit-content;
     background-color: #dfe077;
     vertical-align: middle;
     text-align: center;
     border-radius: 40px;
     box-shadow: 4px 5px 12px 3px rgba(0, 0, 0, 0.10) !important;
     transition: all 0.4s ease 0s;
-    display: flex;
+
     flex-direction: column;
     justify-content: center;
-    padding: 0px 32px !important;
 
-}
-.card-section{
-    gap:24px;
-    display:flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-}
-.image-container{
-    height:100%;
-}
-.img-card {
-    width:100%;
-    height:100%;
-    object-fit: contain;
-}
-.img-card2 {
-    width: 600px;
+    margin: 1%;
+
 }
 
 .tech-icons:hover {
@@ -152,567 +45,63 @@
 
 }
 
-/* --------- */
-/* Testimonial */
-/* --------- */
-
-.home-content-testi{
-    text-align: left;
-    justify-content: left;/* Align text to the left */
-    min-width: 73%;
-    min-height: 80%;
-}
-.header {
-    font-size: 4.5rem;
-    font-family: "League Spartan", Helvetica;
-
-    margin-top: 3%;
-    font-weight: 700;
-}
-.subhead {
-    font-size: 3.4rem;
-    font-family: "League Spartan", Helvetica;
-    color: #ee2c5b;
-    font-weight: 700;
-}
-
-.rotate{
-    transform: rotate(180deg);
-}
-.testi-img {
-    width: 60%;
-    justify-content: center;
-    margin-left: 15%;
-}
-
-.testimonial {
-    /* min-width: 95%;
-    background-color: rgba(223, 224, 119, 0.13);
-    padding: 5%; */
-    border-radius: 70px;
-    justify-content: center;
-    vertical-align: middle;
-    margin-bottom: 10%;
-}
-/* Add this CSS to your stylesheet */
-.opalescent-arrow {
-    /* Customize the color, size, and other styles of the arrows */
-    color: rgba(238, 44, 91, 0.7);
+.card-head {
     font-size: 24px;
-}
-
-.arrow-button {
-    /* Remove default button styles */
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    /* Add any additional styles you want for the arrow buttons */
-
-}
-
-.resume {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    justify-content: center;
-}
-
-.resume-left {
-    padding-right: 80px !important;
-}
-
-.resume-right {
-    padding-left: 80px !important;
-}
-@media (max-width: 767px) {
-
-    .image-section {
-        margin-top: 20px;
-    }
-
-    .image-child-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .card-head {
-
-        font-size: 25px;
-        line-height:35px;
-        font-family: 'DM Sans', sans-serif;
-        margin-bottom: 8%;
-        margin-top: 8%;
-        font-weight: 700;
-
-    }
-    .cardSub {
-        font-size: 15px;
-        padding: 20px;
-        font-weight: 500;
-        line-height:21px;
-        margin-top: auto;
-        font-family: 'DM Sans', sans-serif;
-    }
-
-    .position-image {
-        order: -1; /* Position the first image on top */
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-@media (max-width: 767px) {
-    .resume-left {
-        padding-right: 15px !important;
-        padding-left: 15px !important;
-    }
-
-    .resume-right {
-        padding-right: 15px !important;
-        padding-left: 15px !important;
-    }
-}
-.resume .resume-title {
-    font-size: 2em;
-    font-weight: 700;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.resume .resume-item {
-    padding: 0 0 10px 25px;
-    margin-top: -2px;
-    border-left: 2px solid #8a49a8;
-    position: relative;
-}
-
-.resume .resume-item .resume-title {
-    line-height: 18px;
-    font-size: 0.9em;
-    background: #5234795d;
-    padding: 8px 15px;
-    display: inline-block;
-    font-weight: 600;
     margin-bottom: 10px;
+    text-align: center;
+    font-family: "League Spartan-SemiBold";
 }
 
-.resume .resume-item ul {
-    padding-left: 20px;
-    text-align: justify;
+.image-container {
+    width: 100%;
+    margin: 10px 0;
 }
 
-.resume .resume-item ul li {
-    padding-bottom: 10px;
-    list-style: none;
+.img-card {
+    width: 60%;
+    height: auto;
 }
 
-.resume .resume-item:last-child {
-    padding-bottom: 0;
+.cardSub {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    width: 80%;
+    font-family: Montserrat-SemiBold;
 }
 
-.resume .resume-item::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
-    left: -9px;
-    top: 0;
-    background: #fff;
-    border: 2px solid #8a49a8;
-}
-
-.like-item {
-    padding-top: 10px !important;
-    font-size: 1.1em !important;
-    font-family: sans-serif !important;
-}
-
-.like-btn {
-    background-color: #934cce5e !important;
-    border-color: #934cce5e !important;
-    padding: 0.25rem 0.98rem !important;
-    border-radius: 5px !important;
-    line-height: 1.4 !important;
-    transition: 0.3s ease !important;
-}
-
-.like-btn:hover {
-    transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
-}
-
-.animate-like {
-    animation-name: likeAnimation;
-    animation-fill-mode: forwards;
-    animation-duration: 0.85s;
-}
-@keyframes likeAnimation {
-    0% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.fork-btn {
-    font-size: 1.1em !important;
-    padding-top: 10px !important;
-}
-.section-heading{
-    font-size:28px;
-    font-weight:600;
-    font-family: "League Spartan", Helvetica;
-
-}
-.fork-btn-inner {
-    line-height: 1.4em !important;
-    background-color: #934cce5e !important;
-    padding: 0.25rem 1.1rem !important;
-    vertical-align: middle !important;
-    text-align: center !important;
-}
-
-.fork-btn-inner:hover {
-    transform: translateY(-2px) !important;
-    background-color: #a24dd386 !important;
-    border-color: #a24dd386 !important;
-}
-.fork-btn-inner::after {
-    display: none !important;
-}
-.slick-list{
-    max-width: 1040px !important;
-    margin:0 auto !important;
-}
-.Sub1 {
-    color: #000000;
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 400;
-
-    text-align: left;
-
+.btn-section1 {
     margin-top: 20px;
 }
-.grid-section {
-    padding: 80px 0;
-    position: relative;
-}
-.card-mobile-section{
-    display: none;
-}
-.card-desktop-section{
-    display:block;
-}
-.card-desktop{
-    display: block;
-}
-.card-mobile{
-    display: none;
-}
-@media  screen and (max-width: 768px) {
-    .card-desktop{
-        display: none;
-    }
-    .card-mobile{
-        display: block;
-    }
-    .Footerhed{
-        margin-top: 3%;
-        margin-bottom: 3%;
-        text-align: left !important;
-        text-decoration-color: #0c0513;
-        font-size: 18px;
-        max-width: 100%;
-        font-weight:400;
-        line-height:24px;
-    }
-    .carousel-indicators #gf{
-        width:10px;
-        height:10px;
-        border-radius:30px;
-        background:pink;
-    }
-    .card-mobile-section{
-        display: block;
-    }
-    .card-desktop-section{
-        display:none;
-    }
-    .footer-gap{
-        gap:24px;
-    }
-    .Sub1 {
-        color: #000000;
-        font-family: "Montserrat-Regular", Helvetica;
-        font-size: 15px;
-        line-height: 30px;
-        font-weight: 400;
-        /* padding: 0px 24px; */
-        text-align: center;
 
-        margin-top: 20px;
-    }
-    .carousel-card{
-        background-color: rgba(223, 224, 119, 0.17);
-        border-radius:30px;
-        padding:24px;
-    }
-
-    .inCustomed{
-        position: absolute;
-        right: 0px;
-        max-width: 96%;
-        top: 56%;
-        transform: translateY(-50%);
-    }
+.card-btn {
+    background-color: #333; /* This is just a sample color. Adjust as needed. */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px; /* Space between the button and the card if expanded. */
 }
 
-@media screen and (max-width: 768px) {
-    .hero-banner {
-        min-height: auto;
-    }
-    .mobileImageMb{
-        margin-bottom: -90px;
-    }
-    .shade {
-        min-height:0px;
-
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-        display: none;
-    }
-
-    .header{
-
-        font-size: 25px;
-        font-family: "League Spartan", Helvetica;
-
-        margin-top: 3%;
-        font-weight: 600;
-
-    }
-    .subhead {
-        font-size: 25px;
-        font-family: "League Spartan", Helvetica;
-        color: #ee2c5b;
-        font-weight: 600;
-    }
-    .sectionTwoContainer{
-        min-height: auto;
-    }
-    .main-name {
-        font-size:30px;
-        line-height: 1.3;
-    }
-    .text-deco{
-        text-decoration-thickness: 4px;
-    }
-    .heading-name{
-        font-size: 16px;
-        line-height: 1.5;
-        font-weight: 600;
-    }
-    .main-name-sect{
-        font-size: 16px;
-        line-height: 1.5;
-        font-weight: 600;
-    }
-    .sign-up-btn {
-        font-size: 20px;
-        padding: 8px 32px;
-        width: 100%;
-    }
-
-    .grid-subsection .col-md-6{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
-    .section-description{
-        font-family: "Montserrat-SemiBold", Helvetica;
-        font-size:15px;
-        line-height:24px;
-        display:none;
-    }
-
-    .section-content {
-        color: black;
-        font-family: "League Spartan-SemiBold", Helvetica;
-        font-size:30px;
-        line-height: 42px;
-        font-weight: 600;
-        letter-spacing: 0;
-        text-align: left;
-        /* padding:0px 24px; */
-
-    }
-    .Sub {
-        color: #000000;
-        font-family: "Montserrat-Regular", Helvetica;
-        font-size: 18px;
-        line-height: 1.4;
-        font-weight: 400;
-        /* padding: 0px 24px; */
-        text-align: left;
-        width: 100%;
-        margin-top: 40px;
-
-    }
-    .mb-40{
-        margin-bottom: 20px !important;
-    }
-    .main-name-sect {
-        color: rgb(0, 0, 0);
-        font-family: "League Spartan-SemiBold", "DM Sans-Bold", Helvetica;
-        font-size: 25px !important;
-        line-height: 35px !important;
-        font-weight: 600;
-        letter-spacing: 0;
-        padding-top:14px;
-        text-align: center;
-        z-index: 0;
-    }
-    .rectangle {
-        display: inline-block;
-        /* padding: 20px 60px; */ /* Adjust padding as needed */
-        border-radius: 16px; /* Border corner radius */
-        background-color: #DFE077;
-        font-size:8px !important;
-        font-weight: 600;
-        padding: 6px 20px;
-    }
-    .questions {
-        color: #000000;
-        font-family: "Montserrat-SemiBold", Helvetica;
-        text-align: left;
-        margin-bottom: 0% !important;
-        margin-left: 8%;
-        opacity: 0.5;
-    }
-
-    .questions2 {
-        color: #000000;
-        font-family: "Montserrat-SemiBold", Helvetica;
-        text-align: left;
-        padding-top: 1%;
-        margin-left: -32px!important;
-        overflow: hidden;
-        position: relative;
-    }
-    .questions3 {
-        color: #000000;
-        font-family: "Montserrat-SemiBold", Helvetica;
-        text-align: right;
-        padding-top: 1%;
-        overflow: hidden !important;
-        opacity: 0.2;
-        position:absolute;
-        top: 10%;
-        right: 12%;
-    }
-    .questions4 {
-        color: #000000;
-        font-family: "Montserrat-SemiBold", Helvetica;
-        text-align: right;
-
-        bottom: 26% !important;
-        position:relative;
-        overflow: hidden;
-        opacity: 0.5;
-    }
-    .questions5 {
-        color: #000000;
-        font-family: "Montserrat-SemiBold", Helvetica;
-        text-align: right;
-        padding-top: 1%;
-        overflow: hidden;
-        position: relative;
-        bottom: 18% !important;
-        right: 6%;
-    }
-    .sometimes-you-re {
-        display:none !important;
-    }
-}
-.card-section .tech-icons{
-    flex: 0 0 auto;
-    width: calc(33.33333333% - 16px);
+.card-btn-head {
+    font-size: 20px;
 }
 
-@media screen and (max-width: 576px) {
-    .card-section .tech-icons{
-        flex: 0 0 auto;
-        width: calc(100% - 16px);
-        max-width: 335px;
-    }
+.card-btn:hover {
+    background-color: #555; /* This is just a sample color. Adjust as needed. */
 }
 
-.mb-40{
-    margin-bottom: 40px;
-}
+/* Mobile first design. So the default behavior is columns, and they turn side-by-side for medium and up screens. */
+@media (min-width: 768px) {
+    .btn-section1 {
+        display: none; /* Hide the buttons on larger screens. */
+    }
 
-/* testimonial slider */
-.testimonialSlide{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-.testimonialContent{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.slick-dots {
-    bottom: 11px !important;
-}
-.slick-dots li button:before {
-    font-family: 'slick';
-    font-size: 18px !important;
-    line-height: 1.5;
-    color: #f0235b !important;
-}
-.slick-dots li.slick-active button:before {
-    opacity: .75;
-    color: #f0235b !important;
-}
-button.SliderPrevArrows, button.SliderNextArrows {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-button.SliderPrevArrows{
-    right: -50px;
-}
-button.SliderNextArrows{
-    left: -55px;
-}
-@media  screen and (max-width: 768px) {
-    .testimonialSlide{
-        flex-direction: column;
-    }
-    .testimonialCardImage{
-        visibility: hidden;
-        opacity: 0;
-        display: none;
-    }
-    .testimonialContent{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(223, 224, 119, 0.17);
-        border-radius:30px;
-        padding:24px;
-    }
-    .cardSub{
-        text-align: center;
+    .tech-icons {
+        margin-bottom: 0; /* Remove the margin-bottom on larger screens. */
     }
 }

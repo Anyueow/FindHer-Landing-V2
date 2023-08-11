@@ -14,8 +14,6 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import SectionThree from "./components/SectionThree/SectionThree";
-import Testimonial from "./components/Testimonial/Testimonial";
 import FirstPage from "./components/Reviews/FirstPage";
 import SecondPage from "./components/Reviews/SecondPage";
 import ThirdPage from "./components/Reviews/ThirdPage";
@@ -34,8 +32,7 @@ function MainContent() {
         <Hero />
         <SectionOne />
           <SectionTwo/>
-<SectionThree />
-        <Testimonial />
+
       </>
   );
 }
