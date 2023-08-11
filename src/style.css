@@ -191,10 +191,8 @@ body {
 
 .Sub  {
   color: #000000;
-  font-family: "Montserrat-Regular", Helvetica;
-  font-size: 300%;
-  line-height: 125%;
-  font-weight: 400;
+  font-size: 1rem;
+  font-family:"Montserrat-Regular";
 
 }
 
@@ -426,8 +424,8 @@ font-weight: bold}
   font-weight: 700;
 }
 .subhead {
-  font-size: 3.4rem;
-  font-family: "League Spartan", Helvetica;
+  font-size: 1rem;
+  font-family:"Montserrat-Regular";
    color: #ee2c5b;
   font-weight: 700;
 }
