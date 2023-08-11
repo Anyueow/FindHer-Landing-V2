@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import base from "./Images/hero base.png";
 
 import "./home.css";
-import {Container} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 
 function Home() {
 
@@ -14,7 +14,10 @@ function Home() {
     return (
         <section className="hero">
             <Container className="content">
-                <div className="text-content">
+                <Row className="hero-text">
+
+                    <Col md={8} xs={12} className="hero-text">
+                        <div className="text-content">
                     <h1 className="main-name">
                         Insights on workplaces in <span className="text-deco">India</span>,
                         <span className="connector"> for </span>
@@ -31,10 +34,15 @@ function Home() {
                         Sign up today!
                     </button>
                 </div>
+                </Col>
+                    <Col md={4} xs={12}>
                 <div>
                     <img src={base} className="base-image" alt="Findher Demo"/>
 
                 </div>
+
+                    </Col>
+                </Row>
             </Container>
         </section>
     );

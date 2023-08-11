@@ -63,6 +63,11 @@
     font-size: 1.5rem;
 }
 
+.hero-text {
+    align-items: center;
+    padding: 5%;
+
+}
 
 .signup-btn:hover {
     background-color: #DFE077;
@@ -74,7 +79,7 @@
 }
 
 .base-image {
-    width: 80%;
+    width: 100%;
     display: block;
     z-index: 0;
 }
