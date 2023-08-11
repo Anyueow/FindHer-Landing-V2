@@ -51,9 +51,6 @@ export const SecondPage = () => {
     const titles =["Manager", "Associate", "Intern"];
 
 
-    const handleClick = () => {
-        navigate("/");
-    };
 
 
     return (

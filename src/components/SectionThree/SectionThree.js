@@ -28,14 +28,17 @@ function SectionThree() {
                         <Col className="tech-icons">
                             <div className="space">
                             <h2 className="card-head"> The Whole Picture </h2>
-                            <img src={image1} className="img-card" />
-                                <h3 className="cardSub"> Comprehensive <strong> overviews </strong> of individual offices </h3>
+                            <img src={image1} className="img-card" alt="Comprehensive Reviews"/>
+                                <h3 className="cardSub"> Comprehensive <strong> overviews
+                                </strong> of individual offices </h3>
                             </div>
 
                         </Col>
                         <Col  className="tech-icons">
                             <h2 className="card-head"> Exclusive Insights </h2>
-                            <img src={image2}  src={image2} className="img-card2"/>
+                            <img src={image2}
+                                 className="img-card2"
+                                 alt="Transparent reviews"/>
 
                             <h3 className="cardSub"> Real <strong> transparent reviews
                             </strong> from women who have worked there </h3>
@@ -43,7 +46,9 @@ function SectionThree() {
                         </Col>
                         <Col  className="tech-icons">
                             <h2 className="card-head"> Relevant to <strong> You </strong></h2>
-                            <img src={image3} className="img-card"/>
+                            <img src={image3}
+                                 className="img-card"
+                                 alt="Relevant Details"/>
                             <h3 className="cardSub"> <strong> Detailed </strong> information on factors important to you </h3>
 
                         </Col>

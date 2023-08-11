@@ -3,8 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from "../Assets/logo.png";
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+
 
 function NavBar() {
+
+
+
+
     const [navColor, updateNavbar] = useState(false);
 
     function scrollHandler() {
@@ -28,18 +34,18 @@ function NavBar() {
                 <Navbar.Brand href="/" className="d-flex">
                     <img src={logo} className="img-fluid" alt="brand" style={{ maxWidth: '10%' }} />
                 </Navbar.Brand>
-                <Nav className="navbar-nav" defaultActiveKey="#home">
+                <Nav className="navbar-nav" defaultActiveKey="/">
                     <Nav.Item>
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Link to="/" className="nav-link">Home</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#about">About</Nav.Link>
+                        <Link to="/reviews_login" className="nav-link">Submit a Review!</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#about">Businesses</Nav.Link>
+                        <Link to="/reviews_one" className="nav-link">For Businesses</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#pricing">Contact Us</Nav.Link>
+                        <Link to="/"  className="nav-link">Contact</Link>
                     </Nav.Item>
                 </Nav>
             </Container>

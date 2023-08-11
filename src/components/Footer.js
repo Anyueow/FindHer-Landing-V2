@@ -8,7 +8,7 @@ function Footer() {
   let date = new Date();
   let year = date.getFullYear();
   return (
-      <Container fluid className="footer">
+      <Container fluid id="contact" className="footer">
         <Row>
           <Col md="8" className="footer-copywright">
             <img src={logo} className="img-fluid" alt="brand" style={{ maxWidth: '15%' }} />

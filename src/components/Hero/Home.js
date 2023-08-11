@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 import {Container, Row, Col, Button} from "react-bootstrap";
@@ -11,16 +11,9 @@ function Home() {
 
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
 
-    const handleChange = (event) => {
-        setEmail(event.target.value);
-    };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Email is ${email}`);
-    };
+
 
     return (
         <section>
@@ -56,7 +49,7 @@ function Home() {
                             <img src={base} className="base" alt="Findher Demo"/>
                             <img src={ImgOne} className="hoverOne" alt="Findher Demo" />
                             <img src={ImgTwo} className="hoverTwo" alt="Findher Demo"/>
-                            <img src={ImgThree} className="hoverThree" alt="Findher Demo" />
+                            <img src={ImgThree} className="hoverThree"  alt="Findher Demo"/>
                         </Col>
                     </Row>
                 </Container>
