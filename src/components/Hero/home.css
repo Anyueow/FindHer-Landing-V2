@@ -28,12 +28,9 @@
 .text-deco {
     text-decoration: underline;
     text-decoration-color: #ee2c5b;
-    text-decoration-thickness: 0.8rem;
+    text-decoration-thickness: 0.2rem;
 }
 
-.connector, .highlight, .highlight-alt {
-    font-weight: 400;
-}
 
 .highlight {
     color: black;
