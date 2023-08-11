@@ -1,0 +1,106 @@
+/* Base styles */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content {
+    margin-top: 5%;
+    padding: 5%;
+    align-items: center;
+}
+
+.text-content {
+    flex: 2;
+    text-align: left;
+}
+
+.main-name {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "League Spartan-SemiBold";
+    text-align: left;
+}
+
+.text-deco {
+    text-decoration: underline;
+    text-decoration-color: #ee2c5b;
+    text-decoration-thickness: 0.8rem;
+}
+
+.connector, .highlight, .highlight-alt {
+    font-weight: 700;
+}
+
+.highlight {
+    color: black;
+}
+
+.highlight-alt {
+    color: #e20b3c;
+}
+
+.description {
+    font-size: 2.5rem;
+
+    text-align: left;
+
+
+}
+
+.signup-btn {
+    padding: 2% 5%;
+    border: none;
+    border-radius: 40px;
+    background-color: #ee2c5b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "League Spartan-SemiBold";
+    font-size: 1.5rem;
+}
+
+
+.signup-btn:hover {
+    background-color: #DFE077;
+}
+
+.images-content {
+    flex: 1;
+    position: relative;
+}
+
+.base-image {
+    width: 80%;
+    display: block;
+    z-index: 0;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-name {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .signup-btn {
+        padding: 8px 16px;
+    }
+
+    .images-content {
+        order: -1;  /* Show images on top on mobile */
+        margin-bottom: 20px;
+    }
+}

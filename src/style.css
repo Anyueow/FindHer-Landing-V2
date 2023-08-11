@@ -98,6 +98,7 @@ body {
 }
 
 .custom-navbar {
+  z-index: 5;
   position: fixed;
   top: 0;
   left: 0;
@@ -140,7 +141,7 @@ body {
 }
 
 .navbar-menu a {
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: text-decoration 0.1s;
