@@ -12,9 +12,6 @@ function Home() {
     const navigate = useNavigate();
 
 
-
-
-
     return (
         <section>
             <Container fluid id="home" className="full-height">
