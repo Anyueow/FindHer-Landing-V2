@@ -159,7 +159,7 @@ heading-name3{
     font-size: 2rem;
     border-radius: 2rem;
     background-color: #ee2c5b;
-    border: none !important;
+    border: none  ;
 
 }
 
@@ -174,7 +174,7 @@ heading-name3{
     font-size: 2rem;
     border-radius: 2rem;
     background-color: rgba(226, 11, 60, 0.83);
-    border: none !important;
+    border: none  ;
 }
 /* Optional hover effect */
 .button-sub:hover {
