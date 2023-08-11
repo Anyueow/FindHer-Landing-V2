@@ -43,14 +43,7 @@ function MainContent() {
 
 function App() {
 
-    const [records, setRecords] = useState([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5001/records')
-            .then(response => response.json())
-            .then(data => setRecords(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
 
   const [load, updateLoad] = useState(true);
 
