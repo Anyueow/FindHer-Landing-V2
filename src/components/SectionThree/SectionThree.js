@@ -20,7 +20,7 @@ function SectionThree() {
         setVis(false)
         setShowButton2(true);
         setShowButton3(true);
-    };
+    }
     const toggleCard2 = () => {
         setVis(!vis);
         setIsVisible(false);
@@ -46,7 +46,7 @@ function SectionThree() {
 
                         <h2 className="card-head"> The whole picture </h2>
                         <div className="image-container">
-                            <img src={image1} className="img-card" />  </div>
+                            <img src={image1} className="img-card" alt "check" />  </div>
                         <h3 className="cardSub"> Comprehensive overviews
                             of individual offices</h3>
                     </Col>
@@ -54,14 +54,14 @@ function SectionThree() {
 
                         <h2 className="card-head"> <span className="text-deco1">Exclusive</span> insights </h2>
                         <div className="image-container">
-                            <img src={image2} className="img-card" />  </div>
+                            <img src={image2} className="img-card" alt "check"/>  </div>
                         <h3 className="cardSub">real, transparent reviews from  women who have worked there</h3>
                     </Col>
                     <Col xs={12} md={4} className="tech-icons">
 
                         <h2 className="card-head"> Relevant to you <span><img src={image4} alt="exclaimtory" /></span></h2>
                         <div className="image-container">
-                            <img src={image3} className="img-card" />  </div>
+                            <img src={image3} className="img-card"  alt "check"/>  </div>
                         <h3 className="cardSub"> Detailed  information on factors important to you </h3>
                     </Col>
                 </Row>
@@ -74,7 +74,7 @@ function SectionThree() {
                     {isVisible && (<div xs={12} md={4} className="tech-icons">
                         <h2 className="card-head"> the whole picture </h2>
                         <div className="image-container">
-                            <img src={image1} className="img-card" />  </div>
+                            <img src={image1} className="img-card" alt "check" />  </div>
                         <h3 className="cardSub"> comprehensive overviews
                             of individual offices</h3>
                     </div>)}
@@ -85,7 +85,7 @@ function SectionThree() {
                     {vis && (<div xs={12} md={4} className="tech-icons">
                         <h2 className="card-head"> exclusive insights </h2>
                         <div className="image-container">
-                            <img src={image2} className="img-card" />  </div>
+                            <img src={image2} className="img-card"  alt "check"/>  </div>
                         <h3 className="cardSub">real, transparent reviews from  women who have worked there</h3>
                     </div>)}
                     {
@@ -96,7 +96,7 @@ function SectionThree() {
                     {value && (<div xs={12} md={4} className="tech-icons">
                         <h2 className="card-head"> relevant to you </h2>
                         <div className="image-container">
-                            <img src={image3} className="img-card" />  </div>
+                            <img src={image3} className="img-card"  alt "check"/>  </div>
                         <h3 className="cardSub"> Detailed  information on factors important to you </h3>
                     </div>)}
                 </Row>
