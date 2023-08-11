@@ -28,10 +28,10 @@ function sectTwo() {
                         </Col>
 
                         <Col md={8} >
-                            <img src={base} className="base2"/>
-                            <img src={ImgOne} className="hoverOne2"/>
-                            <img src={ImgTwo} className="hoverTwo2"/>
-                            <img src={ImgThree} className="hoverThree2"/>
+                            <img src={base} className="base2" alt="Findher Demo"/>
+                            <img src={ImgOne} className="hoverOne2" alt="Findher Demo"/>
+                            <img src={ImgTwo} className="hoverTwo2" alt="Findher Demo"/>
+                            <img src={ImgThree} className="hoverThree2" alt="Findher Demo"/>
                         </Col>
 
                     </Row>
