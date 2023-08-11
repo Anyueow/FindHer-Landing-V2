@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero/Home";
 import SectionOne from "./components/SectionOne/Home2";
@@ -59,7 +58,6 @@ function App() {
       <NavbarProvider value="5%">
 
       <Router>
-        <Preloader load={load} />
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />
           <ScrollToTop />
