@@ -9,7 +9,7 @@ function SectionThree() {
     const [selectedCard, setSelectedCard] = useState(null);
 
     const images = [image1, image2, image3];
-    const cardTitles = ["The Whole picture", "Exclusive Insights", "Relevant to You"];
+    const cardTitles = ["The Whole Picture", "Exclusive Insights", "Relevant to You"];
     const cardSubtitles = [
         "Comprehensive overviews of individual offices",
         "Real, transparent reviews from women who have worked there",
