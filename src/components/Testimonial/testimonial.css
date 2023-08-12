@@ -1,0 +1,132 @@
+
+/* Testimonial */
+/* --------- */
+
+
+.header {
+    font-size: 2rem;
+    font-family: "League Spartan", Helvetica;
+
+    margin-top: 3%;
+    font-weight: 700;
+}
+.subhead {
+    font-size: 1.4rem;
+    font-family: "League Spartan", Helvetica;
+    color: #ee2c5b;
+    font-weight: 700;
+    text-align: left;
+    margin-top: -5%;
+}
+.main-name3 {
+    font-size: 3rem;
+    font-family: "League Spartan-SemiBold";
+    color: #000000;
+    text-align: left;
+    margin-bottom: 5%;
+
+}
+.mar { padding: 10%;
+margin-top: 5%}
+.rotate{
+    transform: rotate(180deg);
+}
+.testi-img {
+    width: 60%;
+    justify-content: center;
+    margin-left: 15%;
+}
+
+.testimonial {
+    min-width: 95%;
+    background-color: rgba(223, 224, 119, 0.13);
+    padding: 5%;
+    border-radius: 70px;
+    justify-content: center;
+    vertical-align: middle;
+    margin-bottom: 10%;
+}
+/* Add this CSS to your stylesheet */
+.opalescent-arrow {
+    /* Customize the color, size, and other styles of the arrows */
+    color: rgba(238, 44, 91, 0.7);
+    font-size: 24px;
+}
+
+.arrow-button {
+    /* Remove default button styles */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    /* Add any additional styles you want for the arrow buttons */
+
+}
+
+.cardSub {
+    text-align: left;
+    font-family: Montserrat-Regular;
+}
+
+/* ...Your existing CSS... */
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .testi-img {
+        display: none; /* Hide the image */
+    }
+
+    .header {
+        margin-top: 25%;
+        font-size: 2rem;
+    }
+
+    .subhead {
+        font-size: 1rem;
+        margin-top: 1%; /* Adjust negative margin */
+
+    }
+
+    .cardSub{
+        margin-bottom: 25%;
+    }
+
+    .main-name3 {
+        font-size: 2rem;
+        margin-bottom: 10%;
+        margin-top: 15%;
+    }
+
+
+
+    /* Opalescent circles for progress */
+    .testimonial::after {
+        content: ""; /* This will be a pseudo element to add the circles */
+        display: block;
+        height:200px;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 2rem;
+        padding: 5%;
+
+        margin-left: 2%;
+        justify-content: center;
+    }
+
+    /* Generate circles based on number of testimonials */
+    .testimonial::after {
+        letter-spacing: 1rem; /* Space between circles */
+        color: rgba(238, 44, 91, 0.5); /* Opalescent color, adjust if necessary */
+        font-size: 1.5rem;
+    }
+
+    .arrow-button {
+        justify-content: flex-end;
+        background-color: rgba(223, 224, 119, 0.6);
+        padding: 2px 15px;
+        border-radius: 30px;
+        width: 70%
+    }
+    /* Highlight the current circle based on currentIndex */
+    /* This needs JavaScript logic to work */
+}
