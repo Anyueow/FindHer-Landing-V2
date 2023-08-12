@@ -57,7 +57,11 @@ function SectionThree() {
                 </Row>
 
                 <Row className="btn-section1">
-                    <h1 className="header"> On FindHer you will get:</h1>
+                    <h1 className="header"> On <span
+                        style={{textDecoration:"underline",
+                            textDecorationThickness:"0.5rem",
+                            textDecorationColor:"#c1c50a"}}> FindHer
+                        </span> you will get:</h1>
                     {cardTitles.map((title, index) => (
                         <Col key={index} xs={12} md={4}>
                             <button className="card-btn" onClick={() => handleClick(index)}>
