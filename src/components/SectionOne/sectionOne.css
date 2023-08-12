@@ -74,11 +74,8 @@
 
     /* Mobile styles */
 
-        .outer-container {
-           background-image: url("./mobile bg.png");
-            background-size: cover; /* Ensures the image covers the entire container */
 
-        }
+
 
     /* Additional mobile adjustments can be added here */
 }
