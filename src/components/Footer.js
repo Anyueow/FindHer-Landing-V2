@@ -12,7 +12,7 @@ function Footer() {
         <Row className="marg justify-content-md-start">
           <Col md="8" >
             <img src={logo} className="img-fluid" alt="brand" style={{ maxWidth: '15%' }} />
-            <h4 className="Footerhed"> Envisioning an India where all women are engaged in fulfilling and financially rewarding work</h4>
+            <p className="Footerhed"> Envisioning an India where all women are engaged in fulfilling and financially rewarding work</p>
             <h1 className="footer-copywright">
               Copyright © {year} FindHer</h1>
           </Col>
