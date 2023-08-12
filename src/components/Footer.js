@@ -29,7 +29,7 @@ function Footer() {
                 </a>
               </Col>
               <Col md={2} xs="auto">
-                <a href=""
+                <a href="https://www.linkedin.com/company/96131931/admin/feed/posts/"
                    style={{ color: "#EA394A" }} target="_blank" rel="noopener noreferrer">
                   <AiFillInstagram />
                 </a>
