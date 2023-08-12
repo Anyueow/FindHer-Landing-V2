@@ -21,6 +21,7 @@ import FourthPage from "./components/Reviews/FourthPage";
 import FifthPage from "./components/Reviews/FifthPage";
 import SixthPage from "./components/Reviews/SixthPage";
 import { NavbarProvider } from './components/NavbarContext';
+import SectionThree from "./components/SectionThree/SectionThree";
 
 function MainContent() {
 
@@ -32,6 +33,8 @@ function MainContent() {
         <Hero />
         <SectionOne />
           <SectionTwo/>
+        <SectionThree />
+
 
       </>
   );
