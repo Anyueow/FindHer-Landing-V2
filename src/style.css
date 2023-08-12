@@ -90,11 +90,14 @@ body {
 .container {
   min-width: 100%;
 
+
   margin: 0 auto;
   padding: 0 30px;
+
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* vertically center align items */
+  justify-content: space-between; /* Distributes items evenly. First item will be at the start, last item at the end */
+
 }
 
 .custom-navbar {
@@ -114,7 +117,7 @@ body {
 }
 
 .logo {
-  height: 1.5rem;
+  height: 2.5rem;
   width: auto;
 
 

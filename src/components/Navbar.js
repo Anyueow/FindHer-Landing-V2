@@ -28,6 +28,7 @@ function NavBar() {
                 <Link className="navbar-brand" to="/">
                     <img src={logo} alt="brand" className="logo"/>
                 </Link>
+
                 <button className="navbar-toggler" onClick={() => setShowMenu(!showMenu)}>
                     ☰
                 </button>
@@ -38,7 +39,7 @@ function NavBar() {
                     <li>
                         <Link to="/reviews_login">
                             <strong style={{color:"#E20B3CD4"}}>
-                                Submit a Review </strong></Link>
+                                For Women </strong></Link>
                     </li>
                     <li>
                         <Link to="/reviews_one">For Businesses</Link>
