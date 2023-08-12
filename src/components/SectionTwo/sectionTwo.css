@@ -1,16 +1,17 @@
 .section-container {
     height: 100vh;
-
     background-color: #fff; /* Adjust if needed */
 }
 
 .section-content {
     height: 100%;
-    width:80%;
+    width:60%;
+
 }
 
 .full-height {
     height: 100%;
+    padding:10%
 }
 
 .text-content {
