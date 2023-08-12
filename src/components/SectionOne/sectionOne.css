@@ -59,7 +59,7 @@
 /* Mobile styles */
 @media (max-width: 768px) {
     .inner-container {
-        width: 95%; /* Increasing width on mobile for a smaller padding effect */
+        width: 90%; /* Increasing width on mobile for a smaller padding effect */
     }
 
     .main-name-sect {
@@ -70,6 +70,9 @@
 
     .main-sub {
         font-size: 1rem; /* Decreasing font size for mobile */
+    }
+    .ques-img {
+        margin-bottom: 5%;
     }
 
     /* Mobile styles */
