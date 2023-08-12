@@ -19,10 +19,11 @@ function SectTwo() {
                             </strong>
                         </h1>
                         <h3 className="description">
-                            So you can be in the know, not in the dark. On our platform
+                           <span className="emphasis"> So you can be
+                               in the know,</span> not in the dark. On our platform
                             you can access exclusive information
                             about workplaces to ensure you're always making the
-                            <span className="emphasis"> best career decisions.</span>
+                             best career decisions.
 
                         </h3>
                     </Col>
