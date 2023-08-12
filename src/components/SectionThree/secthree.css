@@ -124,7 +124,7 @@ justify-content: space-evenly;
 }
 
 /* For devices less than 992px (mobile), hide row-features and show btn-section1 */
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
     .row-features {
         display: none;
     }
@@ -139,4 +139,20 @@ justify-content: space-evenly;
         font-size: 2rem;
     }
 
+}
+
+/* secthree.css */
+
+@media (max-width:1000px) {
+    /* Adjustments for sm to md screens (like iPads) */
+    .icon-features
+    {
+        overflow: hidden;
+        padding: 15px;
+        width: 60%; /* adjust as needed */
+    }
+    .img-card, .insights-img-class {
+        width: 60%; /* adjust as needed */
+        margin: 0 auto;
+    }
 }

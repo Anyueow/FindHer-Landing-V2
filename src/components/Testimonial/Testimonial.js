@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import {Col, Container, Row} from "react-bootstrap";
-import image from "./Illustration - composition 2.png";
+import image1 from "./images/17.png";
+import image2 from "./images/18.png";
+import image3 from "./images/19.png";
+import image4 from "./images/20.png";
+import image5 from "./images/21.png";
 import "./testimonial.css";
 
 
@@ -10,22 +14,35 @@ const testimonials = [
     {
         name: "Sneha M.",
 
-        message: "'Findher has been a game-changer in my job search. It gave me insights I didn't "
-                 + "even know I needed and connected me with a job that's a perfect fit. Highly recommend!'",
-        image: image,
+        message: "Findher has been a game-changer in my job search. It gave me insights I didn't "
+                 + "even know I needed and connected me with a job that's a perfect fit. Highly recommend!",
+        image: image1,
     },
     {
         name: "Radhika S.",
-        message: "'As a working mom, finding the right job seemed overwhelming. But Findher's "
-                 + "personalized matches and support made the process seamless. I'm so grateful!'",
-        image: image,
+        message: "As a working mom, finding the right job seemed overwhelming. But Findher's "
+                 + "personalized matches and support made the process seamless. I'm so grateful!",
+        image: image2,
     },
     {
         name: "Pooja K.",
 
-        message: "'I was searching for a platform that truly understood the challenges women like me "
-                 + "face in their careers. Their focus on my specific goals made all the difference'",
-        image: image,
+        message: "I was searching for a platform that truly understood the challenges women like me "
+                 + "face in their careers. Their focus on my specific goals made all the difference",
+        image: image3,
+    },
+    {
+        name: "Radhika S.",
+        message: "As a working mom, finding the right job seemed overwhelming. But Findher's "
+                 + "personalized matches and support made the process seamless. I'm so grateful!",
+        image: image4,
+    },
+    {
+        name: "Pooja K.",
+
+        message: "I was searching for a platform that truly understood the challenges women like me "
+                 + "face in their careers. Their focus on my specific goals made all the difference",
+        image: image5,
     },
     // Add more testimonials as needed
 ];
@@ -33,103 +50,60 @@ const testimonials = [
 function TestimonialSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Adjust items per page based on window width
+    const itemsPerPage = window.innerWidth <= 780 ? 1 : 3;
+
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + itemsPerPage, testimonials.length - itemsPerPage));
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-                            prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-        );
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - itemsPerPage, 0));
     };
 
-    const testimonial = testimonials[currentIndex];
-
+    const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + itemsPerPage);
 
     return (
         <section>
-            <Container fluid id="testimonial" className="full-height desktop mar">
-
-                    <h1 className="main-name3">Hear what these <span className="pink">women </span> have to say…
-               </h1>
-                    <Container className="testimonial">
-                    <Row className="space space align-items-center">
-                        <Col md={1}>
-                            <button className="arrow-button" onClick={handlePrev}>
-                                <AiOutlineLeft className="opalescent-arrow" />
-                            </button>
-                        </Col>
-                        <Col md={4} className="text-left"> {/* Align text to the left */}
-
-
-                            <img src={testimonial.image} alt={testimonial.name} className="testi-img"/>
-
-                        </Col>
-
-                        <Col md={6} >
-
-                            <h1 className="header">{testimonial.name}</h1>
-                            <h2 className="subhead">{testimonial.company}</h2>
-                            <p className="cardSub">{testimonial.message}</p>
-
-                        </Col>
-                        <Col md={1}>
-                            <button className="arrow-button" onClick={handleNext}>
-                                <AiOutlineRight className="opalescent-arrow" />
-                            </button>
-                        </Col>
-
-                    </Row>
-
-                </Container>
+            <Container className=" jus center-contents">
+                <div>
+                    <h1 className="test-head"> What these
+                        women have to say about  <span className="headspan"> FindHer</span> :</h1>
+                </div>
             </Container>
 
-            <Container fluid id="testimonial" className="full-height mobile mar">
+            <Container className="mar">
 
-                <h1 className="main-name3">Hear what these <span className="pink">women </span> have to say…
-                </h1>
-                <Container className="testimonial">
+                <button className="arrow-button " onClick={handlePrev}>
+                    <AiOutlineLeft className="opalescent-arrow" />
+                </button>
 
-                    <Row className="space space align-items-center">
-
-                        <Col md={4} className="text-left"> {/* Align text to the left */}
+                <Row className="center-contents">
 
 
-                            <img src={testimonial.image} alt={testimonial.name} className="testi-img"/>
+                    {visibleTestimonials.map(testimonial => (
+                        <Col md={3}  className="testimonial center-contents">
+                            <Row>
+                                <img className="card-img" src={testimonial.image}
+                                     alt="profile"/>
+                                <h1 className="header">{testimonial.name}</h1>
 
-                        </Col>
-
-                        <Col md={6} >
-
-                            <h2 className="subhead">{testimonial.name}</h2>
+                                <h1 className="Quotes">“</h1>
                             <p className="cardSub">{testimonial.message}</p>
+                                <h1 className="Quotes"> ”</h1>
 
+                            </Row>
                         </Col>
-                        </Row>
+                    ))}
 
 
 
-
-
-
-
-
-                </Container>
-
-                <Row>
-                <Col >
-                    <button className="arrow-button" onClick={handlePrev}>
-                        <AiOutlineLeft className="opalescent-arrow" />
-                    </button>
-                </Col>
-                <Col>
-                    <button className="arrow-button" onClick={handleNext}>
-                        <AiOutlineRight className="opalescent-arrow" />
-                    </button>
-                </Col>
                 </Row>
+                <button className="arrow-button" onClick={handleNext}>
+                    <AiOutlineRight className="opalescent-arrow" />
+                </button>
             </Container>
-            {/* You may include other sections/components below */}
+            {/* ... other components or sections ... */}
         </section>
     );
 }

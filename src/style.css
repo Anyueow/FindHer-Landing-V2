@@ -299,7 +299,8 @@ body {
 .footer-copywright {
   text-align: left  ;
   text-decoration-color: #0c0513;
-  font-size: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 .Footerhed{
   margin-top: 3%;

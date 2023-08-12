@@ -13,7 +13,8 @@ function Footer() {
           <Col md="8" className="footer-copywright">
             <img src={logo} className="img-fluid" alt="brand" style={{ maxWidth: '15%' }} />
             <h2 className="Footerhed"> Envisioning an India where all women are engaged in fulfilling and financially rewarding work</h2>
-            <h3>Copyright © {year} FindHer</h3>
+            <h1 className="footer-copywright">
+              Copyright © {year} FindHer</h1>
           </Col>
           <Col md="4" className="Footerhed">
             <h2 className="Footerhed"> <strong>

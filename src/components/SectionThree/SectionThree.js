@@ -30,7 +30,7 @@ function SectionThree() {
                     textDecorationColor:"#EE2C5BFF"}}> FindHer
                         </span> you will get:</h1>
 
-                    <Col xs={12} md={4} className="icon-features">
+                    <Col xs={12} md={3} lg={4} className="icon-features">
                         <h2 className="features-head">
                             {cardTitles[0]}
                         </h2>
@@ -40,7 +40,7 @@ function SectionThree() {
                         <h3 className="features-sub">{cardSubtitles[0]}</h3>
                     </Col>
 
-                    <Col xs={12} md={4} className="icon-features">
+                    <Col xs={12} md={3} lg={4} className="icon-features">
                         <h2 className="features-head">{cardTitles[1]}</h2>
                         <div>
                             <img src={images[1]} className="insights-img-class" alt={cardTitles[1]} />
