@@ -84,7 +84,9 @@ button:focus {
 /* --------- */
 /* Base styles */
 body {
-  font-family: Montserrat-SemiBold;
+
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-family: "League Spartan", Helvetica, sans-serif;
 }
 
 .container {
@@ -296,17 +298,19 @@ body {
   justify-content: left;
 }
 .footer-copywright {
+  font-family: Montserrat;
   text-align: left  ;
   text-decoration-color: #0c0513;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 .Footerhed{
+  font-family: Montserrat;
   margin-top: 3%;
   margin-bottom: 3%;
   text-align: left  ;
   text-decoration-color: #0c0513;
-  font-size: 2rem;
+  font-size: 1.5rem;
   max-width: 80%;
 }
 
@@ -340,8 +344,9 @@ body {
 
 .footer-icons {
 
-  font-size: 2rem;
-  padding-right: 3%  ;
+  font-size: 2.5rem;
+
+
   list-style: none;
   justify-items: baseline/* Remove bullet points */
 }

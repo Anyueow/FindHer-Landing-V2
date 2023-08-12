@@ -21,19 +21,19 @@ function Footer() {
               Contact Us </strong></h2>
 
             <Row className="footer-icons">
-              <Col md={1} xs="auto">
+              <Col md={2} xs="auto">
                 <a href="https://www.linkedin.com/in/soumyajit4419/"
                    style={{ color: "#EA394A"}} target="_blank" rel="noopener noreferrer">
                   <FaLinkedinIn />
                 </a>
               </Col>
-              <Col md={1} xs="auto">
+              <Col md={2} xs="auto">
                 <a href="https://www.instagram.com/soumyajit4419"
                    style={{ color: "#EA394A" }} target="_blank" rel="noopener noreferrer">
                   <AiFillInstagram />
                 </a>
               </Col>
-              <Col md={1} xs="auto">
+              <Col md={2} xs="auto">
                 <a href="https://www.instagram.com/soumyajit4419"
                    style={{ color: "#EA394A" }} target="_blank" rel="noopener noreferrer">
                   <AiFillMail />
