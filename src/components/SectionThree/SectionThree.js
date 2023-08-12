@@ -24,14 +24,16 @@ function SectionThree() {
         <section className="grid-section shade">
             <Container className="container-md">
                 <Row className="row-features">
-                    <h1 className="header"> On <span
+                    <h1 className="header-font"> On <span
                         style={{textDecoration:"underline",
                         textDecorationThickness:"0.5rem",
                     textDecorationColor:"#EE2C5BFF"}}> FindHer
                         </span> you will get:</h1>
 
                     <Col xs={12} md={4} className="icon-features">
-                        <h2 className="features-head">{cardTitles[0]}</h2>
+                        <h2 className="features-head">
+                            {cardTitles[0]}
+                        </h2>
                         <div>
                             <img src={images[0]} className="img-card" alt={cardTitles[0]} />
                         </div>
@@ -57,7 +59,7 @@ function SectionThree() {
                 </Row>
 
                 <Row className="btn-section1">
-                    <h1 className="header"> On <span
+                    <h1 className="header-font"> On <span
                         style={{textDecoration:"underline",
                             textDecorationThickness:"0.5rem",
                             textDecorationColor:"#c1c50a"}}> FindHer

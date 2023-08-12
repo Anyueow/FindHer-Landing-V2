@@ -23,10 +23,13 @@
 
 /* ------------ */
 
-.header {
+.header-font {
     font-family: "League Spartan-SemiBold";
-text-align: left;
-margin-bottom: 8%; }
+    text-align: left;
+    margin-bottom: 5%;
+    font-size: 2.7rem;
+    margin-left: 5.5%;
+}
 
 .row-features {
 justify-content: space-evenly;
@@ -74,12 +77,16 @@ justify-content: space-evenly;
     font-family: "League Spartan-SemiBold";
     font-size: 1.8rem;
     margin-bottom: 10%;
+    background-color: rgba(255, 255, 255, 0.52);
+    padding:3%;
+    border-radius: 18px;
 }
 
 .features-sub {
-    font-family: Montserrat-SemiBold;
+    font-family: Montserrat-Regular;
     font-size: 1rem;
     margin-top: 10%;
+    font-weight: 100;
 
 }
 
@@ -87,7 +94,7 @@ justify-content: space-evenly;
 
 .card-btn {
     background-color: #ee2c5b; /* This is just a sample color. Adjust as needed. */
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -96,6 +103,7 @@ justify-content: space-evenly;
     text-align: center;
     width: 100%;
     height: 80px;
+    font-weight: bold;
     margin-bottom: 30px; /* Space between the button and the card if expanded. */
 }
 
@@ -104,7 +112,8 @@ justify-content: space-evenly;
 }
 
 .card-btn:hover {
-    background-color: rgba(237, 255, 137, 0.65); /* This is just a sample color. Adjust as needed. */
+    color: black;
+    background-color: #c1c50a;  /* This is just a sample color. Adjust as needed. */
 }
 
 /* All your current styles here... */
@@ -123,4 +132,11 @@ justify-content: space-evenly;
         display: block;
         justify-content: space-evenly;
     }
+
+    .header-font{
+        margin-bottom: 10%;
+        margin-left: 0;
+        font-size: 2rem;
+    }
+
 }

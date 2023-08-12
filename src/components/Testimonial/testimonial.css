@@ -4,20 +4,14 @@
 
 
 .header {
-    font-size: 2rem;
-    font-family: "League Spartan", Helvetica;
+    font-size: 1.5rem;
+    font-family: "Montserrat-Regular", Helvetica;
 
-    margin-top: 3%;
-    font-weight: 700;
-}
-.subhead {
-    font-size: 1.4rem;
-    font-family: "League Spartan", Helvetica;
-    color: #ee2c5b;
-    font-weight: 700;
     text-align: left;
-    margin-top: -5%;
+    margin-top: 3%;
+    font-weight: 500;
 }
+
 .main-name3 {
     font-size: 3rem;
     font-family: "League Spartan-SemiBold";

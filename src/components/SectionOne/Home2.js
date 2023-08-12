@@ -8,7 +8,8 @@ function Home2() {
             <div className="inner-container">
                 <Row className="center-contents">
                     <Col md={6} xs="auto">
-                        <img src={image} className="ques-img"/>
+                        <img src={image} className="ques-img"
+                        alt = "confused"/>
                     </Col>
                     <Col md={6} xs={"auto"}>
                 <h1 className="main-name-sect">

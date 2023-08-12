@@ -9,21 +9,20 @@ import "./testimonial.css";
 const testimonials = [
     {
         name: "Sneha M.",
-        company: "Anonymous",
+
         message: "'Findher has been a game-changer in my job search. It gave me insights I didn't "
                  + "even know I needed and connected me with a job that's a perfect fit. Highly recommend!'",
         image: image,
     },
     {
         name: "Radhika S.",
-        company: "Anonymous",
         message: "'As a working mom, finding the right job seemed overwhelming. But Findher's "
                  + "personalized matches and support made the process seamless. I'm so grateful!'",
         image: image,
     },
     {
         name: "Pooja K.",
-        company: "Anonymous",
+
         message: "'I was searching for a platform that truly understood the challenges women like me "
                  + "face in their careers. Their focus on my specific goals made all the difference'",
         image: image,
@@ -102,8 +101,7 @@ function TestimonialSection() {
 
                         <Col md={6} >
 
-                            <h1 className="header">{testimonial.name}</h1>
-                            <h2 className="subhead">{testimonial.company}</h2>
+                            <h2 className="subhead">{testimonial.name}</h2>
                             <p className="cardSub">{testimonial.message}</p>
 
                         </Col>
