@@ -15,11 +15,11 @@ function Home() {
     const navigate = useNavigate();
 
     return (
-        <section className="hero">
+        <section className="hero center-contents">
             <Container className="content">
-                <Row className="hero-text">
+                <Row className="hero-text no-gutters center-contents">
 
-                    <Col md={8} xs={12} className="hero-text">
+                    <Col md={7} xs={12} className="hero-text">
                         <div className="text-content">
                     <h1 className="main-name">
                         Insights on workplaces in <span className="text-deco">India</span>,
@@ -38,7 +38,7 @@ function Home() {
                     </button>
                 </div>
                 </Col>
-                    <Col md={4} xs={12}>
+                    <Col md={5} xs={12}>
                 <div>
                     <img src={base} className="base-image desktop" alt="Findher Demo"/>
                     <img src={mobbase} className="base-image mobile" alt="Findher Demo"/>
