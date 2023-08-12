@@ -139,6 +139,14 @@ justify-content: space-evenly;
         font-size: 2rem;
     }
 
+    .icon-features {
+        justify-content: center;
+    }
+
+    .img-card {
+        width: 100%
+    }
+
 }
 
 /* secthree.css */

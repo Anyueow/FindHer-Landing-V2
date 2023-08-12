@@ -65,17 +65,17 @@ function SectionThree() {
                             textDecorationColor:"#c1c50a"}}> FindHer
                         </span> you will get:</h1>
                     {cardTitles.map((title, index) => (
-                        <Col key={index} xs={12} md={4}>
+                        <Col key={index} xs={12} md={4} className="align-content-center">
                             <button className="card-btn" onClick={() => handleClick(index)}>
                                 <span className="card-btn-head">{title}</span>
                             </button>
                             {selectedCard === index && (
                                 <div className="icon-features">
-                                    <h2 className="features-head">{cardTitles[1]}</h2>
+                                    <h2 className="features-head">{cardTitles[index]}</h2>
                                     <div>
-                                        <img src={images[1]} className="insights-img-class" alt={cardTitles[1]} />
+                                        <img src={images[index]} className="img-card" alt={cardTitles[1]} />
                                     </div>
-                                    <h3 className="features-sub">{cardSubtitles[1]}</h3>
+                                    <h3 className="features-sub">{cardSubtitles[index]}</h3>
                                 </div>
                             )}
                         </Col>
