@@ -68,27 +68,37 @@ export const FirstPage = () => {
         <Container id="reviews" className="sub"
                    style={{ paddingTop: navbarHeight }}>
 
-            <Row className="ROw">
-                <Col md={6} className="design">
+            <Row className="ROw center-contents">
+                <Col md={6} className="align-content-center">
 
+                    <div className="design">
+                    <Row>
                     <p className="head-name">
                         Exclusive information
                         about workplaces in India
                     </p>
+                    </Row>
+                    <Row>
                         <p className="sub-name">
                             ... brought to you by women who
                             have been there before
                         </p>
 
+                    </Row>
+                    <Row>
+                        <Col md={6} xs={5}>
                         <Button className="button-sub" onClick={handleClick}> More info </Button>
 
+                        </Col>
+                    </Row>
+                    </div>
                 </Col>
 
 
                 <Col md={6} className="formDes">
 <Row>
-                    <h1 className="head-name" >
-                        Join the Waitlist!</h1>
+                    <h2 className="head-name" >
+                        Join the Waitlist!</h2>
 </Row><Row>
 
                 <Form onSubmit={handleSubmit} className="form-wrapper">

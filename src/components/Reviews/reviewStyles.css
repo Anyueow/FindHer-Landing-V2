@@ -41,10 +41,11 @@
 .design {
     background-color: #DFE077;
     border-radius: 40px;
-    padding: 14% 10% 8% 8%;
+    padding: 20% 30% 10% 15%;
+    margin: 8% 4%;
 
-    height: fit-content;
-    width: 45%;
+
+
 }
 
 /* Ensuring use of defined fonts, and falling back to generic families if specific fonts aren't available */
@@ -104,7 +105,7 @@ body, button, input, select, textarea {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-top: 20vw;
+    margin-top: 10vw;
     margin-bottom: 15vw;
 
 }
@@ -112,7 +113,7 @@ body, button, input, select, textarea {
 .head-name {
     color: black;
     font-family: "League Spartan-SemiBold";
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 400;
     padding-bottom: 1%;
     text-align: left;
@@ -136,7 +137,7 @@ heading-name3{
 .sub-name {
     color: black;
     font-family: "Montserrat-SemiBold";
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 200;
     padding-bottom: 1%;
     text-align: left;
@@ -144,24 +145,27 @@ heading-name3{
 }
 
 .formDes {
-    padding: 10%;
+
     height:auto;
     vertical-align: middle;
 }
 
 
 .button-sub {
-    margin: 2rem 0px;
+
     padding: 1rem 2rem;
-
-
     font-family: "Montserrat-SemiBold";
-    font-size: 2rem;
+    font-size: 1rem;
     border-radius: 2rem;
     background-color: #ee2c5b;
     border: none  ;
 
 }
+.button-sub:disabled {
+    background-color: #c78c9a;  /* Example gray color for disabled state */
+    cursor: not-allowed;       /* Display a not allowed cursor */
+}
+
 
 .button-sub2{
     margin: 2rem 0px;
@@ -194,7 +198,8 @@ heading-name3{
 }
 
 .form-grp{
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+    width:80%;
 }
 
 .full-width {
@@ -398,5 +403,6 @@ text-align: left;
 .error-message{
     font-family: Montserrat-SemiBold;
     margin-top: 1%;
+    font-size: 0.7rem;
     color: #ee2c5b;
 }
