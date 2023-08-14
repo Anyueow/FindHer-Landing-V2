@@ -7,7 +7,6 @@ import "./reviewStyles.css";
 import NavbarContext from '../NavbarContext';
 
 
-
 export const FirstPage = () => {
     const navbarHeight = React.useContext(NavbarContext);
     const [email, setEmail] = useState("");
@@ -17,7 +16,6 @@ export const FirstPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if all required fields have values
         setIsFormValid(email !== "" && phone !== "" && password !== "");
     }, [email, phone, password]);
 
@@ -28,8 +26,6 @@ export const FirstPage = () => {
             return; // Don't proceed if the form is not valid
         }
 
-        console.log("Form submitted with:", {email, phone, password});
-
         try {
             const response = await axios.post("http://localhost:5001/api/users", {
                 email,
@@ -37,9 +33,9 @@ export const FirstPage = () => {
                 password
             });
 
-            if (response.status === 200) {
+            if (response.status >= 200 && response.status < 300) {
                 console.log("User added successfully:", response.data);
-                // Navigate or perform other actions after successful addition
+                navigate('/reviews_one');
             } else {
                 console.error("Error adding user:", response);
             }
@@ -51,6 +47,7 @@ export const FirstPage = () => {
     const handleClick = () => {
         navigate("/");
     };
+
 
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
@@ -104,12 +101,13 @@ export const FirstPage = () => {
                         <Form onSubmit={handleSubmit} className="form-wrapper">
                             <Form.Group className="form-grp">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email"
-                                              value={email}
-                                              onChange={e => setEmail(e.target.value)}
-                                              required/>
-                                {!email && <p className="error-message">Email is required</p>}
-
+                                <Form.Control
+                                    type="email"
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    required
+                                />
+                                {/* Conditional rendering based on user's action might be better */}
                             </Form.Group>
                             <Form.Group className="form-grp">
                                 <Form.Label>Phone Number</Form.Label>
@@ -128,10 +126,11 @@ export const FirstPage = () => {
                             </Form.Group>
                             <Button
                                 className="button-sub reviewbtn"
-                                onClick={() => navigate('/reviews_one')}
+                                type="submit"
                                 disabled={!isFormValid}
                             >
-                                Leave a review!</Button>
+                                Register
+                            </Button>
                         </Form>
                     </Row>
 
