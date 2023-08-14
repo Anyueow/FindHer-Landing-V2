@@ -395,7 +395,7 @@ heading-name3{
 }
 
 .rating-box{
-text-align: left;
+    text-align: left;
 }
 
 .pink { color: #ee2c5b}
@@ -405,4 +405,34 @@ text-align: left;
     margin-top: 1%;
     font-size: 0.7rem;
     color: #ee2c5b;
+}
+
+@media (max-width: 600px) {
+    .first-div{
+        margin-top: 0%;
+    }
+    .head-name {
+        font-family: "League Spartan-SemiBold";
+        font-size: 1.3rem;
+        font-weight: 300;
+        padding-bottom: 1%;
+        text-align: left;
+    }
+    .Waitlist{
+        text-align: center;
+    }
+    .design{
+        margin-top: 0% !important;
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+    .reviewbtn{
+        font-size: 0.8rem;
+        font-weight: 300;
+        margin-top: 3%;
+        margin-left: 22% !important;
+    }
+    .form-grp{
+        margin-left: 5% !important;
+    }
 }

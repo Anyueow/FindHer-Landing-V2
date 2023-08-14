@@ -65,83 +65,83 @@ export const FirstPage = () => {
 
     return (
         <section>
-        <Container id="reviews" className="sub"
-                   style={{ paddingTop: navbarHeight }}>
+            <Container id="reviews" className="sub"
+                       style={{ paddingTop: navbarHeight }}>
 
-            <Row className="ROw center-contents">
-                <Col md={6} className="align-content-center">
+                <Row className="ROw center-contents">
+                    <Col md={6} className="align-content-center first-div">
 
-                    <div className="design">
-                    <Row>
-                    <p className="head-name">
-                        Exclusive information
-                        about workplaces in India
-                    </p>
+                        <div className="design">
+                            <Row>
+                                <p className="head-name">
+                                    Exclusive information
+                                    about workplaces in India
+                                </p>
+                            </Row>
+                            <Row>
+                                <p className="sub-name">
+                                    ... brought to you by women who
+                                    have been there before
+                                </p>
+
+                            </Row>
+                            <Row>
+                                <Col md={6} xs={41}>
+                                    <Button className="button-sub" onClick={handleClick}> More info </Button>
+
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
+
+
+                    <Col md={6} className="formDes">
+                        <Row>
+                            <h2 className="head-name Waitlist" >
+                                Join the Waitlist!</h2>
+                        </Row><Row>
+
+                        <Form onSubmit={handleSubmit} className="form-wrapper">
+                            <Form.Group className="form-grp">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email"
+                                              value={email}
+                                              onChange={e => setEmail(e.target.value)}
+                                              required/>
+                                {!email && <p className="error-message">Email is required</p>}
+
+                            </Form.Group>
+                            <Form.Group className="form-grp">
+                                <Form.Label>Phone Number</Form.Label>
+                                <Form.Control type="text" value={phone} onChange={e => setPhone(e.target.value)}
+                                              required/>
+                                {!phone && <p className="error-message">Phone Number is required</p>}
+
+                            </Form.Group>
+                            <Form.Group className="form-grp">
+                                <Form.Label>Create Password</Form.Label>
+                                <Form.Control type="password" value={password}
+                                              onChange={e => setPassword(e.target.value)}
+                                              required/>
+                                {!password && <p className="error-message">Password is required</p>}
+
+                            </Form.Group>
+                            <Button
+                                className="button-sub reviewbtn"
+                                onClick={() => navigate('/reviews_one')}
+                                disabled={!isFormValid}
+                            >
+                                Leave a review!</Button>
+                        </Form>
                     </Row>
-                    <Row>
-                        <p className="sub-name">
-                            ... brought to you by women who
-                            have been there before
-                        </p>
-
-                    </Row>
-                    <Row>
-                        <Col md={6} xs={5}>
-                        <Button className="button-sub" onClick={handleClick}> More info </Button>
-
-                        </Col>
-                    </Row>
-                    </div>
-                </Col>
 
 
-                <Col md={6} className="formDes">
-<Row>
-                    <h2 className="head-name" >
-                        Join the Waitlist!</h2>
-</Row><Row>
-
-                <Form onSubmit={handleSubmit} className="form-wrapper">
-                <Form.Group className="form-grp">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email"
-                                  value={email}
-                                  onChange={e => setEmail(e.target.value)}
-                                  required/>
-                    {!email && <p className="error-message">Email is required</p>}
-
-                </Form.Group>
-                <Form.Group className="form-grp">
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="text" value={phone} onChange={e => setPhone(e.target.value)}
-                                  required/>
-                    {!phone && <p className="error-message">Phone Number is required</p>}
-
-                </Form.Group>
-                <Form.Group className="form-grp">
-                    <Form.Label>Create Password</Form.Label>
-                    <Form.Control type="password" value={password}
-                                  onChange={e => setPassword(e.target.value)}
-                                  required/>
-                    {!password && <p className="error-message">Password is required</p>}
-
-                </Form.Group>
-                <Button
-                    className="button-sub"
-                    onClick={() => navigate('/reviews_one')}
-                    disabled={!isFormValid}
-                >
-                    Leave a review!</Button>
-            </Form>
+                    </Col>
                 </Row>
 
+            </Container>
 
-                </Col>
-            </Row>
-
-        </Container>
-
-    </ section>
+        </ section>
     );
 };
 
