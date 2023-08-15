@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
@@ -9,43 +8,61 @@ import NavbarContext from '../NavbarContext';
 
 export const FirstPage = () => {
     const navbarHeight = React.useContext(NavbarContext);
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
-    const [isFormValid, setIsFormValid] = useState(false);
+
+    const [user, setUser] = useState({
+                                         email: "",
+                                         phone: "",
+                                         password: ""
+                                     });
+
+    const [formErrors, setFormErrors] = useState({
+                                                     email: false,
+                                                     phone: false,
+                                                     password: false
+                                                 });
+
     const navigate = useNavigate();
 
-    useEffect(() => {
-        setIsFormValid(email !== "" && phone !== "" && password !== "");
-    }, [email, phone, password]);
+    const handleInputChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!isFormValid) {
-            return; // Don't proceed if the form is not valid
-        }
-
-        try {
-            const response = await axios.post("http://localhost:5001/api/users", {
-                email,
-                phone,
-                password
-            });
-
-            if (response.status >= 200 && response.status < 300) {
-                console.log("User added successfully:", response.data);
-                navigate('/reviews_one');
-            } else {
-                console.error("Error adding user:", response);
-            }
-        } catch (error) {
-            console.error("An error occurred while adding the user:", error);
-        }
+        setUser({...user, [name]: value})
     };
 
     const handleClick = () => {
         navigate("/");
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const { email, phone, password } = user;
+
+        if (email && phone && password) {
+            const response = await fetch("/your-api-endpoint", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                                         email: email,
+                                         phoneNumber: phone, // Make sure the key matches the expected key in your backend
+                                         password: password,
+                                     }),
+            });
+
+            const data = await response.json();
+
+            // Handle the server response, e.g. navigate to a new page or show a success message
+        } else {
+            // Update formErrors to show which fields are missing
+            setFormErrors({
+                              email: !email,
+                              phone: !phone,
+                              password: !password,
+                          });
+        }
     };
 
 
@@ -59,6 +76,8 @@ export const FirstPage = () => {
         });
     }
 
+
+    const isFormValid = user.email && user.phone && user.password;
 
     return (
         <section>
@@ -102,27 +121,34 @@ export const FirstPage = () => {
                             <Form.Group className="form-grp">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control
+                                    name="email" // Added name attribute
                                     type="email"
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
+                                    value={user.email}
+                                    onChange={handleInputChange}
                                     required
                                 />
-                                {/* Conditional rendering based on user's action might be better */}
                             </Form.Group>
                             <Form.Group className="form-grp">
                                 <Form.Label>Phone Number</Form.Label>
-                                <Form.Control type="text" value={phone} onChange={e => setPhone(e.target.value)}
-                                              required/>
-                                {!phone && <p className="error-message">Phone Number is required</p>}
-
+                                <Form.Control
+                                    name="phone" // Added name attribute
+                                    type="text"
+                                    value={user.phone}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                                {formErrors.phone && <p className="error-message">Phone Number is required</p>}
                             </Form.Group>
                             <Form.Group className="form-grp">
                                 <Form.Label>Create Password</Form.Label>
-                                <Form.Control type="password" value={password}
-                                              onChange={e => setPassword(e.target.value)}
-                                              required/>
-                                {!password && <p className="error-message">Password is required</p>}
-
+                                <Form.Control
+                                    name="password" // Added name attribute
+                                    type="password"
+                                    value={user.password}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                                {formErrors.password && <p className="error-message">Password is required</p>}
                             </Form.Group>
                             <Button
                                 className="button-sub reviewbtn"

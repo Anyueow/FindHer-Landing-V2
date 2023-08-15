@@ -65,7 +65,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<MainContent />} />
-              <Route path="/reviews_login" element={<FirstPage />} />
+              <Route path="/register" element={<FirstPage />} />
               <Route path="/reviews_one" element={<SecondPage />}/>
               <Route path="/reviews_two" element={<ThirdPage />}/>
               <Route path="/reviews_three" element={<FourthPage />}/>
