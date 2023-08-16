@@ -30,7 +30,7 @@ const FifthPage = () => {
                    style={containerStyle}
         >
             <Row className="reviews-box">
-            <h1 className="head-name">Tell us your experience at <b>{companyName}</b></h1>
+            <h1 className="head-name" style={{marginBottom:"3%"}}>Tell us your experience at <b>{companyName}</b></h1>
             <Form>
                 <Form.Group className="question-grp"  >
                 <Form.Label className="question-grp-q">
@@ -52,7 +52,7 @@ const FifthPage = () => {
                     <Form.Label className="question-grp-q">
                         3. What are some amenities this place offer?
                     </Form.Label>
-                    <Form.Control className="custom-input2" type="text" placeholder="Type answer here..." />
+                    <Form.Control className="custom-input" type="text" placeholder="Type answer here..." />
                 </Form.Group>
                 </Col>
 
@@ -62,7 +62,8 @@ const FifthPage = () => {
                     <Form.Label className="question-grp-q">
                         4. What other benefits are provided?
                     </Form.Label>
-                    <Form.Control className="custom-input2" type="text" placeholder="Type answer here..." />
+                    <Form.Control className="custom-input"
+                                  type="text" placeholder="Type answer here..." />
                 </Form.Group>
                 </Col>
 

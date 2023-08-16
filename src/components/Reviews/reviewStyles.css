@@ -16,10 +16,14 @@
     text-align: left;
     height: 105vh;
 }
+.formCont{
+    display:flex;
+    align-items: center;
+}
 
 .reviews-box{
-    margin-top: 10%;
-    min-width: 80vw;
+
+    max-width: 80vw;
     height: fit-content;
 
 }
@@ -53,7 +57,6 @@
     font-family: 'League Spartan-SemiBold';
     src: url("/src/Assets/Fonts/LeagueSpartan-SemiBold.ttf");
 
-    /* Add source URL */
 }
 
 @font-face {
@@ -66,7 +69,6 @@
     font-family: 'League Spartan';
     src: url("/src/Assets/Fonts/LeagueSpartan-Regular.ttf");
 
-    /* Add source URL */
 }
 
 @font-face {
@@ -92,6 +94,8 @@ body, button, input, select, textarea {
     -webkit-box-shadow: none; /* For Safari and Chrome */
     -moz-box-shadow: none;    /* For Firefox */
     box-shadow: none;
+    width: 100%;
+
 }
 
 .ROw {
@@ -246,6 +250,8 @@ heading-name3{
 .question-grp {
 
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
 
 
 
@@ -253,19 +259,20 @@ heading-name3{
 
 .question-grp-q{
     font-family: "League Spartan";
-    font-size: 2.5rem;
+    font-size: 1.2rem;
 
 }
 
 .custom-input {
     width: 100%;      /* Adjust the width as per your need */
-    height: 200px;      /* Adjust the height as per your need */
+    height: 40%;      /* Adjust the height as per your need */
     border: 2px solid #000;  /* Border styling. Adjust as per your need */
     background-color: rgba(223, 224, 119, 0.11);
     border-radius: 15px;     /* Rounded corners. Adjust to make it more or less rounded */
     padding: 10px;     /* Inner spacing */
     font-size: 26px;   /* Adjust font size if needed */
-    outline: none;     /* Remove default focus outline if desired */
+    outline: none;
+    font-size: 1rem; /* Remove default focus outline if desired */
     transition: border-color 0.3s ease;
     justify-content: flex-start;/* Smooth transition for border color changes, e.g., on focus */
 }
@@ -276,7 +283,7 @@ heading-name3{
 
 .custom-input2 {
     width: 100%;      /* Adjust the width as per your need */
-    height: 200px;      /* Adjust the height as per your need */
+    height: 40%;     /* Adjust the height as per your need */
     border: 2px solid #000;  /* Border styling. Adjust as per your need */
     background-color: rgba(223, 224, 119, 0.1);
     border-radius: 15px;     /* Rounded corners. Adjust to make it more or less rounded */
@@ -421,6 +428,10 @@ heading-name3{
     .Waitlist{
         text-align: center;
     }
+    .formCont{
+        display: flex;
+        flex-direction: column;
+    }
     .design{
         margin-top: 0% !important;
         margin-left: 0% !important;
@@ -432,7 +443,20 @@ heading-name3{
         margin-top: 3%;
         margin-left: 22% !important;
     }
+    .clmn1{
+        align-items: center;
+    }
     .form-grp{
         margin-left: 5% !important;
+    }
+    /* .gg{
+        margin-left: 10px !important;
+    } */
+    /* .custom-input, .custom-input2{
+        width: 100%;
+    } */
+    .button-sub{
+
+        margin-left: 25px;
     }
 }
