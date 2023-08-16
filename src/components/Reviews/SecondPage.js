@@ -22,26 +22,45 @@ export const SecondPage = () => {
     const navigate = useNavigate();
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Prevents the form from refreshing the page on submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem("token");
 
-        // Extract values
+        if (!token) {
+            console.error("No token found. Please log in.");
+            return;
+        }
+
         const selectedCompany = e.target.elements[0].value;
         const selectedLocation = e.target.elements[1].value;
         const selectedTitle = e.target.elements[2].value;
         const selectedStartDate = e.target.elements[3].value;
         const selectedEndDate = e.target.elements[5].value;
 
-        console.log({
-                        selectedCompany,
-                        selectedLocation,
-                        selectedTitle,
-                        selectedStartDate,
-                        selectedEndDate
-                    });
+        const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` // Include JWT token in Authorization header
+            },
+            body: JSON.stringify({
+                                     companyName: selectedCompany,
+                                     companyOffice: selectedLocation,
+                                     positionTitle: selectedTitle,
+                                     startDate: selectedStartDate,
+                                     endDate: selectedEndDate
+                                 })
+        });
 
-        // Here, you can add any further processing, like sending these values to a server
-    };
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            navigate('/reviews_three'); // Assuming you have a success page to navigate to
+        } else {
+            console.error(`Error: ${response.status} ${response.statusText}`);
+        }
+    }
+
 
 // Use this function in the Form onSubmit prop:
 // <Form onSubmit={handleSubmit} ...
