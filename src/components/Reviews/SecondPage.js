@@ -14,6 +14,8 @@ export const SecondPage = () => {
     const [Loc, setLoc] = useState("");
     const [title, setTitle] = useState("");
     const navbarHeight = React.useContext(NavbarContext);
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
 
 
 
@@ -35,7 +37,7 @@ export const SecondPage = () => {
         const selectedLocation = e.target.elements[1].value;
         const selectedTitle = e.target.elements[2].value;
         const selectedStartDate = e.target.elements[3].value;
-        const selectedEndDate = e.target.elements[5].value;
+        const selectedEndDate = e.target.elements[4].value;
 
         const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
             method: "POST",
@@ -147,15 +149,33 @@ export const SecondPage = () => {
                             <Col md={6} xs={12} style={{marginTop:"-1%"}}>
                                 <Form.Group >
                             <Form.Label className="mt-3">End Date</Form.Label>
-                            <div className="input-group date" id="datepickerEnd" data-target-input="nearest">
-                                <input type="text"
-                                       className="form-control datetimepicker-input custom-input3"
-                                       data-target="#datepickerEnd"/>
-                                <div className="input-group-append" data-target="#datepickerEnd"
-                                     data-toggle="datetimepicker">
-                                    <div className="input-group-text"><AiOutlineCalendar /></div>
-                                </div>
-                            </div>
+                                    <div className="input-group date" id="datepickerStart" data-target-input="nearest">
+                                        <input type="text"
+                                               className="form-control datetimepicker-input custom-input3"
+                                               data-target="#datepickerStart"
+                                               value={startDate} // Bind the input value to the state variable
+                                               onChange={(e) => setStartDate(e.target.value)} // Update the state variable on change
+                                        />
+                                        <div className="input-group-append" data-target="#datepickerStart"
+                                             data-toggle="datetimepicker">
+                                            <div className="input-group-text"><AiOutlineCalendar /></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="input-group date" id="datepickerEnd" data-target-input="nearest">
+                                        <input type="text"
+                                               className="form-control datetimepicker-input custom-input3"
+                                               data-target="#datepickerEnd"
+                                               value={endDate} // Bind the input value to the state variable
+                                               onChange={(e) => setEndDate(e.target.value)} // Update the state variable on change
+                                        />
+                                        <div className="input-group-append" data-target="#datepickerEnd"
+                                             data-toggle="datetimepicker">
+                                            <div className="input-group-text"><AiOutlineCalendar /></div>
+                                        </div>
+                                    </div>
+
+
                                 </Form.Group>
                             </Col>
 
