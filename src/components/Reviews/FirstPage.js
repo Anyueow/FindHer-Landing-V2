@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
@@ -73,15 +73,16 @@ export const FirstPage = () => {
 
 
 
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    if (isSafari) {
-        const elements = document.querySelectorAll('.ROw');
-        elements.forEach(element => {
-            element.style.marginTop = '2vw';
-            element.style.marginBottom = 0;
-        });
-    }
+    useEffect(() => {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (isSafari) {
+            const elements = document.querySelectorAll('.ROw');
+            elements.forEach(element => {
+                element.style.marginTop = '2vw';
+                element.style.marginBottom = 0;
+            });
+        }
+    }, []); // Added this useEffect hook
 
 
     const isFormValid = user.email && user.phone && user.password;
