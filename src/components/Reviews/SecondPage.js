@@ -63,9 +63,9 @@ export const SecondPage = () => {
                         <h1 className="head-name" style={{marginBottom:"4%"}}>
                             Tell us about one <span style={{color: "#ee2c5b"}}> company </span>
                             you’ve worked at before : </h1>
-                        <Row>
-                        <Col md={6} xs="auto">
-                        <Form.Group className="form-grp">
+                        <Row style={{marginBottom:"2%"}}>
+                        <Col md={6} xs={12}>
+                        <Form.Group>
                             <Form.Label>Company Name</Form.Label>
                             <Form.Select  className="custom-input3" value={companies} onChange={e => setCompany(e.target.value)}>
                                 {companyNames.map((companyName, index) => (
@@ -75,8 +75,8 @@ export const SecondPage = () => {
                                 ))}
                             </Form.Select>
                         </Form.Group>
-                        </Col> <Col md={6} xs="auto">
-                        <Form.Group className="form-grp">
+                        </Col> <Col md={6} xs={12}>
+                        <Form.Group >
 
                             <Form.Label>Office Location</Form.Label>
                             <Form.Select  className="custom-input3" value={Loc} onChange={e => setLoc(e.target.value)}>
@@ -88,9 +88,13 @@ export const SecondPage = () => {
                             </Form.Select>
                         </Form.Group> </Col></Row>
 
-                        <Form.Group className="form-grp">
+                        <Row style={{marginBottom:"2%"}}>
+                        <Form.Group >
                             <Form.Label>Your Job Title</Form.Label>
-                            <Form.Select className="custom-input3" value={title} onChange={e => setTitle(e.target.value)}>
+                            <Form.Select className="custom-input3"
+                                         style={{padding:"25px"}}
+                                         value={title}
+                                         onChange={e => setTitle(e.target.value)}>
                                 {titles.map((title, index) => (
                                     <option key={index} value={title}>
                                         {title}
@@ -98,10 +102,14 @@ export const SecondPage = () => {
                                 ))}
                             </Form.Select>
                         </Form.Group>
+                        </Row>
 
-                        <Form.Group className="form-grp">
-                            <Row className="justify-content-center">
-                            <Col md={6} xs="auto">
+
+                        <Row style={{marginBottom:"2%"}} className="justify-content-lg-start">
+
+
+                            <Col md={6} xs={12}>
+                                <Form.Group >
                             <Form.Label>Start Date</Form.Label>
                             <div className="input-group date" id="datepickerStart" data-target-input="nearest">
                                 <input type="text"
@@ -112,11 +120,13 @@ export const SecondPage = () => {
                                     <div className="input-group-text"><AiOutlineCalendar /></div>
                                 </div>
                             </div>
+                                </Form.Group>
                         </Col>
 
 
-                                <Col md={6} xs="auto">
 
+                            <Col md={6} xs={12} style={{marginTop:"-1%"}}>
+                                <Form.Group >
                             <Form.Label className="mt-3">End Date</Form.Label>
                             <div className="input-group date" id="datepickerEnd" data-target-input="nearest">
                                 <input type="text"
@@ -127,21 +137,29 @@ export const SecondPage = () => {
                                     <div className="input-group-text"><AiOutlineCalendar /></div>
                                 </div>
                             </div>
+                                </Form.Group>
                             </Col>
-                            </Row>
+
+
+                        </Row>
+
+
+                        <Row>
 
                             <Button className="button-sub"
+
+                                    style={{marginTop:"3%"}}
                                     onClick={() => navigate('/reviews_three')}>
 
                                 Next </Button>
 
                             <Link to="/reviews_two" className="nav-link2">
 
-                                <h1 className="link-nav"> I have never worked anywhere before </h1>
+                                <p > I have never worked anywhere before </p>
                             </Link>
 
+                        </Row>
 
-                        </Form.Group>
 
 
 
