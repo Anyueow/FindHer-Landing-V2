@@ -428,6 +428,10 @@ heading-name3{
     color: #ee2c5b;
 }
 
+.datepicker-full-width {
+    width: 100%;
+}
+
 @media (max-width: 600px) {
 
     .ROw{
