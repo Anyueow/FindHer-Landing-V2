@@ -1,23 +1,21 @@
-import React, {useEffect, useState} from "react";
-import { useNavigate } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import "./reviewStyles.css";
-import NavbarContext from '../NavbarContext';
-
+import NavbarContext from "../NavbarContext";
 
 export const FirstPage = () => {
     const navbarHeight = React.useContext(NavbarContext);
 
     const [user, setUser] = useState({
                                          email: "",
-                                         phone: "",
+                                         phoneNumber: "",
                                          password: ""
                                      });
 
     const [formErrors, setFormErrors] = useState({
                                                      email: false,
-                                                     phone: false,
+                                                     phoneNumber: false,
                                                      password: false
                                                  });
 
@@ -26,8 +24,7 @@ export const FirstPage = () => {
     const handleInputChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-
-        setUser({...user, [name]: value})
+        setUser({ ...user, [name]: value });
     };
 
     const handleClick = () => {
@@ -37,9 +34,9 @@ export const FirstPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { email, phone, password } = user;
+        const { email, phoneNumber, password } = user;
 
-        if (email && phone && password) {
+        if (email && phoneNumber && password) {
             const response = await fetch("http://localhost:3000/register", {
                 method: "POST",
                 headers: {
@@ -47,45 +44,39 @@ export const FirstPage = () => {
                 },
                 body: JSON.stringify({
                                          email: email,
-                                         phoneNumber: phone,
+                                         phoneNumber: phoneNumber,
                                          password: password,
                                      }),
             });
 
             if (response.ok) {
                 const data = await response.json();
-                // Handle the successful response, e.g., navigate to a new page or show a success message
                 console.log(data); // Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
             } else {
                 // Handle the error response
+                const data = await response.json();
                 console.error(`Error: ${response.status} ${response.statusText}`);
+                console.error(data.message); // Print the error message from the backend
+
+                // Display error messages for duplicate email or phone number
+                setFormErrors({
+                                  email: data.message === "Email already in use.",
+                                  phoneNumber: data.message === "Phone number already in use.",
+                                  password: false,
+                              });
             }
         } else {
             // Update formErrors to show which fields are missing
             setFormErrors({
                               email: !email,
-                              phone: !phone,
+                              phoneNumber: !phoneNumber,
                               password: !password,
                           });
         }
     };
 
-
-
-    useEffect(() => {
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        if (isSafari) {
-            const elements = document.querySelectorAll('.ROw');
-            elements.forEach(element => {
-                element.style.marginTop = '2vw';
-                element.style.marginBottom = 0;
-            });
-        }
-    }, []); // Added this useEffect hook
-
-
-    const isFormValid = user.email && user.phone && user.password;
+    const isFormValid = user.email && user.phoneNumber && user.password;
 
     return (
         <section>
@@ -141,11 +132,11 @@ export const FirstPage = () => {
                                 <Form.Control
                                     name="phone" // Added name attribute
                                     type="text"
-                                    value={user.phone}
+                                    value={user.phoneNumber}
                                     onChange={handleInputChange}
                                     required
                                 />
-                                {formErrors.phone && <p className="error-message">Phone Number is required</p>}
+                                {formErrors.phoneNumber && <p className="error-message">Phone Number is required</p>}
                             </Form.Group>
                             <Form.Group className="form-grp">
                                 <Form.Label>Create Password</Form.Label>
