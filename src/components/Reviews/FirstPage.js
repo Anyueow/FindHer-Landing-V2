@@ -56,7 +56,7 @@ export const FirstPage = () => {
                 const data = await response.json();
                 // Handle the successful response, e.g., navigate to a new page or show a success message
                 console.log(data); // Print the response data to the console for debugging purposes
-                navigate("/success"); // Assuming you have a success page to navigate to
+                navigate("/reviews_one"); // Assuming you have a success page to navigate to
             } else {
                 // Handle the error response
                 console.error(`Error: ${response.status} ${response.statusText}`);
