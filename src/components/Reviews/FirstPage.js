@@ -130,7 +130,7 @@ export const FirstPage = () => {
                             <Form.Group className="form-grp">
                                 <Form.Label>Phone Number</Form.Label>
                                 <Form.Control
-                                    name="phone" // Added name attribute
+                                    name="phoneNumber" // Added name attribute
                                     type="text"
                                     value={user.phoneNumber}
                                     onChange={handleInputChange}
