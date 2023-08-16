@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
@@ -40,21 +40,27 @@ export const FirstPage = () => {
         const { email, phone, password } = user;
 
         if (email && phone && password) {
-            const response = await fetch("/your-api-endpoint", {
+            const response = await fetch("http://localhost:3000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                                          email: email,
-                                         phoneNumber: phone, // Make sure the key matches the expected key in your backend
+                                         phoneNumber: phone,
                                          password: password,
                                      }),
             });
 
-            const data = await response.json();
-
-            // Handle the server response, e.g. navigate to a new page or show a success message
+            if (response.ok) {
+                const data = await response.json();
+                // Handle the successful response, e.g., navigate to a new page or show a success message
+                console.log(data); // Print the response data to the console for debugging purposes
+                navigate("/success"); // Assuming you have a success page to navigate to
+            } else {
+                // Handle the error response
+                console.error(`Error: ${response.status} ${response.statusText}`);
+            }
         } else {
             // Update formErrors to show which fields are missing
             setFormErrors({
@@ -64,6 +70,7 @@ export const FirstPage = () => {
                           });
         }
     };
+
 
 
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
