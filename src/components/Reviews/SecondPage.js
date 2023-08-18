@@ -151,7 +151,7 @@ export const SecondPage = () => {
                             Next
                         </Button>
                         <Link to="/reviews_two" className="nav-link2">
-                            <p> I have never worked anywhere before </p>
+                            <p> If you haven't worked anywhere before, click here </p>
                         </Link>
                     </Row>
                 </Form>
