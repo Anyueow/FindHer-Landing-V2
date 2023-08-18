@@ -51,7 +51,10 @@ export const FirstPage = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(data); // Print the response data to the console for debugging purposes
+                console.log(data);
+
+                // Save the JWT token in the localStorage
+                localStorage.setItem("token", data.token);// Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
             } else {
                 // Handle the error response
