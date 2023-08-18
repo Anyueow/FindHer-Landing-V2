@@ -53,59 +53,65 @@ const FourthPage = () => {
     const navigate = useNavigate();  // Import useHistory for navigation
 
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
 
-        const token = localStorage.getItem("token");
+        e.preventDefault();
 
-        if (!token) {
-            console.error("No token found. Please log in.");
-            return;
-        }
-        // Get reviewId from local storage
-        const reviewId = localStorage.getItem("reviewId");
+        const submitRatings = async () => {
+            const token = localStorage.getItem("token");
 
-        if (!reviewId) {
-            console.error("No reviewId found. Please log in.");
-            return;
-        }
-
-        // Prepare the ratings object
-        const ratings = {
-            flexibility: flexibilityRating,
-            management: managementRating,
-            coWorkers: coWorkersRating,
-            diversity: diversityRating,
-            safety: safetyRating,
-            compensation: compensationRating
-        };
-
-        try {
-            // Make an asynchronous request to the backend API
-            const response = await fetch("http://localhost:3000/login/updateRatings", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`  // Assuming your token is stored in local storage
-                },
-                body: JSON.stringify({ reviewId, ratings })
-            });
-
-            // Handle response
-            if (response.ok) {
-                const result = await response.json();
-                console.log(result);
-                console.log("She works!!")
-
-                // Navigate to the next page
-                navigate("/reviews_five");
-            } else {
-                // Handle error
-                const errorMessage = await response.text();
-                console.error(errorMessage);
+            if (!token) {
+                console.error("No token found. Please log in.");
+                return;
             }
-        } catch (error) {
-            console.error("Error occurred:", error);
+            // Get reviewId from local storage
+            const reviewId = localStorage.getItem("reviewId");
+
+            if (!reviewId) {
+                console.error("No reviewId found. Please log in.");
+                return;
+            }
+
+            // Prepare the ratings object
+            const ratings = {
+                flexibility: flexibilityRating,
+                management: managementRating,
+                coWorkers: coWorkersRating,
+                diversity: diversityRating,
+                safety: safetyRating,
+                compensation: compensationRating
+            };
+
+            try {
+                // Make an asynchronous request to the backend API
+                const response = await fetch("http://localhost:3000/login/updateRatings", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`  // Assuming your token is stored in local storage
+                    },
+                    body: JSON.stringify({reviewId, ratings})
+                });
+
+                // Handle response
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log(result);
+                    console.log("She works!!")
+
+                    // Navigate to the next page
+                    navigate("/reviews_five");
+                } else {
+                    // Handle error
+                    const errorMessage = await response.text();
+                    console.error(errorMessage);
+                }
+            } catch (error) {
+                console.error("Error occurred:", error);
+            }
         }
+
+        submitRatings();
     };
 
     return (
