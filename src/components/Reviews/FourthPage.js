@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, InputGroup } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import "./reviewStyles.css";
+import { useNavigate } from "react-router-dom";
+
 import NavbarContext from "../NavbarContext";
 
 const FourthPage = () => {
@@ -48,7 +50,7 @@ const FourthPage = () => {
         )
     };
 
-    const history = useHistory();  // Import useHistory for navigation
+    const navigate = useNavigate();  // Import useHistory for navigation
 
     const handleSubmit = async () => {
         // Get reviewId from local storage
@@ -81,7 +83,7 @@ const FourthPage = () => {
                 console.log(result);
 
                 // Navigate to the next page
-                history.push("/reviews_four");
+                navigate("/reviews_four");
             } else {
                 // Handle error
                 const errorMessage = await response.text();
