@@ -18,46 +18,56 @@ export const SecondPage = () => {
 
     const navbarHeight = React.useContext(NavbarContext);
     const navigate = useNavigate();
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const token = localStorage.getItem("token");
 
-        if (!token) {
-            console.error("No token found. Please log in.");
-            return;
-        }
+        const submitReview = async () => {
+            const token = localStorage.getItem("token");
 
-        // Use the token in the headers of your authenticated requests
-        const headers = {
-            "Authorization": `Bearer ${token}`
+            if (!token) {
+                console.error("No token found. Please log in.");
+                return;
+            }
+
+            const reviewData = {
+                companyName: companies,
+                companyOffice: Loc,
+                positionTitle: title,
+                startDate: startDate.toISOString().split('T')[0], // Convert the date to a string in the format YYYY-MM-DD
+                endDate: endDate.toISOString().split('T')[0] // Convert the date to a string in the format YYYY-MM-DD
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(reviewData)
+                });
+
+                if(response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                    // Save the review ID in the localStorage
+                    localStorage.setItem("reviewId", data.reviewId);
+                    navigate("./reviews_three");
+                } else {
+                    // Handle the error response
+                    const data = await response.json();
+                    console.error(`Error: ${response.status} ${response.statusText}`);
+                    console.error(data.message); // Print the error message from the backend
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+            }
         };
 
-        const formData = new FormData(e.target);
-        const selectedCompany = formData.get('companyName');
-        const selectedLocation = formData.get('companyOffice');
-        const selectedTitle = formData.get('positionTitle');
-        const selectedStartDate = formData.get('startDate');
-        const selectedEndDate = formData.get('endDate');
+        submitReview();
+    };
 
-        const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify({
-                                     companyName: selectedCompany,
-                                     companyOffice: selectedLocation,
-                                     positionTitle: selectedTitle,
-                                     startDate: selectedStartDate,
-                                     endDate: selectedEndDate
-                                 })
-        });
 
-        if (response.ok) {
-            navigate('/reviews_three');
-        } else {
-            console.error(`Error: ${response.status} ${response.statusText}`);
-        }
-    }
 
     const companyNames = ["Company 1", "Company 2", "Company 3"];
     const companyLocs = ["Office 1", "Office 2"];
