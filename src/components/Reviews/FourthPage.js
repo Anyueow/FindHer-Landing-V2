@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, InputGroup } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import "./reviewStyles.css";
-import {useNavigate} from "react-router-dom";
 import NavbarContext from "../NavbarContext";
 
 const FourthPage = () => {
     // within your component
-    const navigate = useNavigate();
     const navbarHeight = React.useContext(NavbarContext);
 
 
@@ -48,6 +46,50 @@ const FourthPage = () => {
                 })}
             </InputGroup>
         )
+    };
+
+    const history = useHistory();  // Import useHistory for navigation
+
+    const handleSubmit = async () => {
+        // Get reviewId from local storage
+        const reviewId = localStorage.getItem("reviewId");
+
+        // Prepare the ratings object
+        const ratings = {
+            flexibility: flexibilityRating,
+            management: managementRating,
+            coWorkers: coWorkersRating,
+            diversity: diversityRating,
+            safety: safetyRating,
+            compensation: compensationRating
+        };
+
+        try {
+            // Make an asynchronous request to the backend API
+            const response = await fetch("/updateRatings", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`  // Assuming your token is stored in local storage
+                },
+                body: JSON.stringify({ reviewId, ratings })
+            });
+
+            // Handle response
+            if (response.ok) {
+                const result = await response.json();
+                console.log(result);
+
+                // Navigate to the next page
+                history.push("/reviews_four");
+            } else {
+                // Handle error
+                const errorMessage = await response.text();
+                console.error(errorMessage);
+            }
+        } catch (error) {
+            console.error("Error occurred:", error);
+        }
     };
 
     return (
@@ -97,7 +139,7 @@ const FourthPage = () => {
                         <Button type="submit"
                                 className="button-sub2"
                                 style={{ marginBottom: '50px' }}
-                                onClick={() => navigate('/reviews_four')}>
+                                onClick={handleSubmit}>
                             Next </Button>
 
                 </Row>
