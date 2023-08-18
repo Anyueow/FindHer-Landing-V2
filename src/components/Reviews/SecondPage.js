@@ -28,6 +28,11 @@ export const SecondPage = () => {
             return;
         }
 
+        // Use the token in the headers of your authenticated requests
+        const headers = {
+            "Authorization": `Bearer ${token}`
+        };
+
         const formData = new FormData(e.target);
         const selectedCompany = formData.get('companyName');
         const selectedLocation = formData.get('companyOffice');
@@ -37,10 +42,7 @@ export const SecondPage = () => {
 
         const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
+            headers: headers,
             body: JSON.stringify({
                                      companyName: selectedCompany,
                                      companyOffice: selectedLocation,
