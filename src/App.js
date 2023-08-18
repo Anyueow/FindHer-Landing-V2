@@ -23,6 +23,7 @@ import SixthPage from "./components/Reviews/SixthPage";
 import { NavbarProvider } from './components/NavbarContext';
 import SectionThree from "./components/SectionThree/SectionThree";
 import Testimonial from "./components/Testimonial/Testimonial";
+import Login from "./components/Reviews/login";
 
 function MainContent() {
 
@@ -66,6 +67,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainContent />} />
               <Route path="/reviews_login" element={<FirstPage />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/reviews_one" element={<SecondPage />}/>
               <Route path="/reviews_two" element={<ThirdPage />}/>
               <Route path="/reviews_three" element={<FourthPage />}/>

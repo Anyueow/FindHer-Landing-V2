@@ -36,20 +36,20 @@ export const FirstPage = () => {
 
         const { email, phoneNumber, password } = user;
 
-        if (email && phoneNumber && password) {
-            const response = await fetch("http://localhost:3000/register", {
+        if ((email || phoneNumber) && password) {
+            const response = await fetch("http://localhost:3000/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                                         email: email,
-                                         phoneNumber: phoneNumber,
+                                         email: email || null,
+                                         phoneNumber: phoneNumber || null,
                                          password: password,
                                      }),
             });
 
-            if (response.ok) {
+            if(response.ok) {
                 const data = await response.json();
                 console.log(data); // Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
@@ -113,33 +113,30 @@ export const FirstPage = () => {
                     <Col md={6} className="formDes">
                         <Row>
                             <h2 className="head-name Waitlist" >
-                                Join the Waitlist!</h2>
-                        </Row><Row>
+                                Log in to submit another review! </h2>
 
-                        <Form onSubmit={handleSubmit} className="form-wrapper">
+                            <Form onSubmit={handleSubmit} className="form-wrapper">
+                                <Form.Group className="form-grp">
+                                    <Form.Label>Email or Phone</Form.Label>
+                                    <Form.Control
+                                        name="emailOrPhone" // Changed name attribute
+                                        type="text" // Changed type to text
+                                        value={user.email || user.phoneNumber}
+                                        onChange={(e) => {
+                                            const value = e.target.value;
+                                            if (value.includes('@')) {
+                                                setUser({ ...user, email: value, phoneNumber: "" });
+                                            } else {
+                                                setUser({ ...user, phoneNumber: value, email: "" });
+                                            }
+                                        }}
+                                        required
+                                    />
+                                    {(formErrors.email || formErrors.phoneNumber) && <p className="error-message">Email or phone is required</p>}
+
+                                </Form.Group>
                             <Form.Group className="form-grp">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control
-                                    name="email" // Added name attribute
-                                    type="email"
-                                    value={user.email}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </Form.Group>
-                            <Form.Group className="form-grp">
-                                <Form.Label>Phone Number</Form.Label>
-                                <Form.Control
-                                    name="phoneNumber" // Added name attribute
-                                    type="text"
-                                    value={user.phoneNumber}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                                {formErrors.phoneNumber && <p className="error-message">Phone Number is required</p>}
-                            </Form.Group>
-                            <Form.Group className="form-grp">
-                                <Form.Label>Create Password</Form.Label>
+                                <Form.Label>Password</Form.Label>
                                 <Form.Control
                                     name="password" // Added name attribute
                                     type="password"
@@ -149,24 +146,23 @@ export const FirstPage = () => {
                                 />
                                 {formErrors.password && <p className="error-message">Password is required</p>}
                             </Form.Group>
-                            <Button
-                                className="button-sub reviewbtn"
-                                type="submit"
-                                disabled={!isFormValid}
-                                style={{marginBottom:"3%"}}
-                            >
-                                Register
-                            </Button>
+                                <Button
+                                    className="button-sub reviewbtn"
+                                    type="submit"
+                                    disabled={!isFormValid}
+                                    style={{marginBottom:"3%"}}
+                                >
+                                    Log In
+                                </Button>
 
 
-                        </Form>
-                    </Row>
-                        <Link to="/login" className="nav-link2"
+                            </Form>
+                        </Row>
+                        <Link to="/reviews_login" className="nav-link2"
                               style={{fontSize:"1rem", color:"#ee2c5b"}}
                         >
-                            <p> Log in instead</p>
+                            <p> Sign up in instead</p>
                         </Link>
-
 
                     </Col>
                 </Row>
