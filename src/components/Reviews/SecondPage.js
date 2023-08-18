@@ -35,7 +35,7 @@ export const SecondPage = () => {
         const selectedStartDate = formData.get('startDate');
         const selectedEndDate = formData.get('endDate');
 
-        const response = await fetch("http://localhost:3000/protectedRoute/createReview", {
+        const response = await fetch("http://localhost:3000/updateRatings", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
