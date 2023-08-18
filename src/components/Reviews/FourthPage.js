@@ -52,9 +52,22 @@ const FourthPage = () => {
 
     const navigate = useNavigate();  // Import useHistory for navigation
 
+
     const handleSubmit = async () => {
+
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            console.error("No token found. Please log in.");
+            return;
+        }
         // Get reviewId from local storage
         const reviewId = localStorage.getItem("reviewId");
+
+        if (!reviewId) {
+            console.error("No reviewId found. Please log in.");
+            return;
+        }
 
         // Prepare the ratings object
         const ratings = {
@@ -68,11 +81,11 @@ const FourthPage = () => {
 
         try {
             // Make an asynchronous request to the backend API
-            const response = await fetch("/updateRatings", {
+            const response = await fetch("http://localhost:3000/login/updateRatings", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`  // Assuming your token is stored in local storage
+                    "Authorization": `Bearer ${token}`  // Assuming your token is stored in local storage
                 },
                 body: JSON.stringify({ reviewId, ratings })
             });
@@ -81,9 +94,10 @@ const FourthPage = () => {
             if (response.ok) {
                 const result = await response.json();
                 console.log(result);
+                console.log("She works!!")
 
                 // Navigate to the next page
-                navigate("/reviews_four");
+                navigate("/reviews_five");
             } else {
                 // Handle error
                 const errorMessage = await response.text();
