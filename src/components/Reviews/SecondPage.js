@@ -52,7 +52,7 @@ export const SecondPage = () => {
                     console.log(data);
                     // Save the review ID in the localStorage
                     localStorage.setItem("reviewId", data.reviewId);
-                    navigate("./reviews_three");
+                    navigate("/reviews_three");
                 } else {
                     // Handle the error response
                     const data = await response.json();
