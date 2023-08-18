@@ -84,7 +84,7 @@ const FourthPage = () => {
 
             try {
                 // Make an asynchronous request to the backend API
-                const response = await fetch("http://localhost:3000/login/updateRatings", {
+                const response = await fetch("http://localhost:3000/updateRatings", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const FourthPage = () => {
                     console.log("She works!!")
 
                     // Navigate to the next page
-                    navigate("/reviews_five");
+                    navigate("/reviews_four");
                 } else {
                     // Handle error
                     const errorMessage = await response.text();
