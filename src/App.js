@@ -72,7 +72,7 @@ function App() {
               <Route path="/reviews_two" element={<ThirdPage />}/>
               <Route path="/reviews_three" element={<FourthPage />}/>
               <Route path="/reviews_four" element={<FifthPage />}/>
-              <Route path="/reviews_five" element={<SixthPage />}/>
+              <Route path="/success" element={<SixthPage />}/>
 
 
 
