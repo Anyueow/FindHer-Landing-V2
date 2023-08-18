@@ -34,7 +34,7 @@ export const FirstPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { email, phoneNumber, password } = user;
+        const {email, phoneNumber, password} = user;
 
         if ((email || phoneNumber) && password) {
             const response = await fetch("http://localhost:3000/login", {
@@ -49,7 +49,7 @@ export const FirstPage = () => {
                                      }),
             });
 
-            if(response.ok) {
+            if (response.ok) {
                 const data = await response.json();
                 console.log(data); // Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
@@ -59,11 +59,14 @@ export const FirstPage = () => {
                 console.error(`Error: ${response.status} ${response.statusText}`);
                 console.error(data.message); // Print the error message from the backend
 
-                // Display error messages for duplicate email or phone number
+                // Display error messages related to invalid credentials or other issues
                 setFormErrors({
-                                  email: data.message === "Email already in use.",
-                                  phoneNumber: data.message === "Phone number already in use.",
-                                  password: false,
+                                  email: data.message
+                                         === "Invalid email, phone number, or password.",
+                                  phoneNumber: data.message
+                                               === "Invalid email, phone number, or password.",
+                                  password: data.message
+                                            === "Invalid email, phone number, or password.",
                               });
             }
         } else {
@@ -74,9 +77,10 @@ export const FirstPage = () => {
                               password: !password,
                           });
         }
-    };
+    }
 
-    const isFormValid = user.email && user.phoneNumber && user.password;
+
+        const isFormValid = user.email && user.password;
 
     return (
         <section>
