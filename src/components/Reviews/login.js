@@ -37,7 +37,7 @@ export const FirstPage = () => {
         const {email, phoneNumber, password} = user;
 
         if ((email || phoneNumber) && password) {
-            const response = await fetch("http://localhost:3000/login", {
+            const response = await fetch("https://findher-backend-gtm.herokuapp.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
