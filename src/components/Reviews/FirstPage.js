@@ -42,6 +42,7 @@ export const FirstPage = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include", // Include this line
                 body: JSON.stringify({
                                          email: email,
                                          phoneNumber: phoneNumber,
@@ -49,7 +50,9 @@ export const FirstPage = () => {
                                      }),
             });
 
-            if (response.ok) {
+
+
+        if (response.ok) {
                 const data = await response.json();
                 console.log(data); // Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to

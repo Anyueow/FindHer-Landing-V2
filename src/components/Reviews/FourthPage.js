@@ -90,6 +90,7 @@ const FourthPage = () => {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`  // Assuming your token is stored in local storage
                     },
+                    credentials: "include", // Include this line
                     body: JSON.stringify({reviewId, ratings})
                 });
 

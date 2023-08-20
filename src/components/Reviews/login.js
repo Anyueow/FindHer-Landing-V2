@@ -42,6 +42,7 @@ export const FirstPage = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include", // Include this line
                 body: JSON.stringify({
                                          email: email || null,
                                          phoneNumber: phoneNumber || null,
@@ -49,7 +50,9 @@ export const FirstPage = () => {
                                      }),
             });
 
-            if (response.ok) {
+
+
+        if (response.ok) {
                 const data = await response.json();
                 console.log(data);
 

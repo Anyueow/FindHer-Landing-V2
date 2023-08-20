@@ -44,10 +44,12 @@ export const SecondPage = () => {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`
                     },
+                    credentials: "include", // Include this line
                     body: JSON.stringify(reviewData)
                 });
 
-                if(response.ok) {
+
+            if(response.ok) {
                     const data = await response.json();
                     console.log(data);
                     // Save the review ID in the localStorage
