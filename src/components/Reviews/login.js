@@ -36,7 +36,10 @@ export const FirstPage = () => {
 
         const {email, phoneNumber, password} = user;
 
+
+
         if ((email || phoneNumber) && password) {
+
             const response = await fetch("https://findher-deploy-c232276eae44.herokuapp.com/login", {
                 method: "POST",
                 headers: {
@@ -48,18 +51,23 @@ export const FirstPage = () => {
                                          phoneNumber: phoneNumber || null,
                                          password: password,
                                      }),
+
             });
+            console.log("how can you hate from outside the club you cant even get in")
 
 
 
-        if (response.ok) {
+
+            if (response.ok) {
                 const data = await response.json();
                 console.log(data);
+                console.log("she's in but she got problems ")
 
                 // Save the JWT token in the localStorage
                 localStorage.setItem("token", data.token);// Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
             } else {
+                console.log("dammit these errors")
                 // Handle the error response
                 const data = await response.json();
                 console.error(`Error: ${response.status} ${response.statusText}`);

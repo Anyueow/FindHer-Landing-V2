@@ -50,6 +50,8 @@ export const FirstPage = () => {
                                      }),
             });
 
+            console.log("its been sent")
+
 
 
         if (response.ok) {
@@ -57,7 +59,9 @@ export const FirstPage = () => {
                 console.log(data); // Print the response data to the console for debugging purposes
                 navigate("/reviews_one"); // Assuming you have a success page to navigate to
             } else {
-                // Handle the error response
+                 console.log("dammit these errors")
+
+            // Handle the error response
                 const data = await response.json();
                 console.error(`Error: ${response.status} ${response.statusText}`);
                 console.error(data.message); // Print the error message from the backend
