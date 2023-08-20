@@ -49,7 +49,7 @@ const FifthPage = () => {
         };
 
         try {
-            const response = await fetch('https://findher-backend-gtm.herokuapp.com/updateReviewDetails', {
+            const response = await fetch('https://findher-deploy-c232276eae44.herokuapp.com/updateReviewDetails', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

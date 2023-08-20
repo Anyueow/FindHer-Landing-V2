@@ -84,7 +84,7 @@ const FourthPage = () => {
 
             try {
                 // Make an asynchronous request to the backend API
-                const response = await fetch("https://findher-backend-gtm.herokuapp.com/updateRatings", {
+                const response = await fetch("https://findher-deploy-c232276eae44.herokuapp.com/updateRatings", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
