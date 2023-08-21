@@ -24,6 +24,12 @@ import { NavbarProvider } from './components/NavbarContext';
 import SectionThree from "./components/SectionThree/SectionThree";
 import Testimonial from "./components/Testimonial/Testimonial";
 import Login from "./components/Reviews/login";
+import B2b_first from "./components/Businesses/b2b_first";
+import EmailSignIn from "./components/Businesses/EmailSignIn";
+import PhoneSignIn from "./components/Businesses/PhoneSignIn";
+import DetailsOneB2B from "./components/Businesses/DetailsOneB2B";
+import DetailsTwoB2B from "./components/Businesses/DetailsTwoB2B";
+import EndPage from "./components/Businesses/endPage";
 
 function MainContent() {
 
@@ -72,7 +78,13 @@ function App() {
               <Route path="/reviews_two" element={<ThirdPage />}/>
               <Route path="/reviews_three" element={<FourthPage />}/>
               <Route path="/reviews_four" element={<FifthPage />}/>
-              <Route path="/success" element={<SixthPage />}/>
+              <Route path="/successUser" element={<SixthPage />}/>
+              <Route path="/business_register" element={<B2b_first />} />
+              <Route path="/email_signin" element={<EmailSignIn />} />
+              <Route path="/signin-phone" element={<PhoneSignIn />} />
+            <Route path="/update_details" element={<DetailsOneB2B />} />
+            <Route path="/update_details_two" element={<DetailsTwoB2B />} />
+            <Route path="/successBizz" element={<EndPage />} />
 
 
 

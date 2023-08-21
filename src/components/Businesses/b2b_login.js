@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
-import "./reviewStyles.css";
+import "./bizzstyles.css";
 import NavbarContext from "../NavbarContext";
 
 export const FirstPage = () => {

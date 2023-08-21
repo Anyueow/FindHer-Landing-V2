@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Col, Container, Form, Row,} from 'react-bootstrap';
-import "./reviewStyles.css";
+import "./bizzstyles.css";
 import {useNavigate} from "react-router-dom";
 import NavbarContext from "../NavbarContext";
 
@@ -64,7 +64,7 @@ const FifthPage = () => {
                 console.log(result);
 
                 // Navigate to the next page if needed
-                navigate('/successUser');
+                navigate('/success');
             } else {
                 const errorMessage = await response.text();
                 console.error(errorMessage);
